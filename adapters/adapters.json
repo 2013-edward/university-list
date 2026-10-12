@@ -3376,6 +3376,93 @@
      "capture": false
     }
    ]
+  },
+  "dongguk": {
+   "univ_id": "dongguk",
+   "name": "동국대학교",
+   "aliases": [
+    "동국대",
+    "동국대학교(서울)",
+    "동국대(서울)"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://ipsi.dongguk.edu/admission/html/rolling/notice.asp",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "USER_NM",
+     "exam_no": "USER_ID",
+     "birth6": "USER_BIRT"
+    },
+    "const_params": {}
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하합니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "추가합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "&quot;합격&quot;",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "입력하신 정보가 존재하지 않습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
   }
  }
 }
