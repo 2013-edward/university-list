@@ -3292,6 +3292,85 @@
      "capture": false
     }
    ]
+  },
+  "yonsei": {
+   "univ_id": "yonsei",
+   "name": "연세대학교(서울)",
+   "aliases": [
+    "연세대학교",
+    "연세대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_susi_fin_ALL/pass.asp",
+    "method": "POST",
+    "action_url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_susi_fin_ALL/pass_ok.asp",
+    "fields": {
+     "name": "Name",
+     "exam_no": "Suhumno",
+     "birth6": "Birthdate"
+    },
+    "const_params": {}
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "검색된 내용이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
   }
  }
 }
