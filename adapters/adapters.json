@@ -1,0 +1,3297 @@
+{
+ "format_version": 1,
+ "adapters": {
+  "afa": {
+   "univ_id": "afa",
+   "name": "공군사관학교",
+   "aliases": [
+    "공군사관"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/susi1/afa/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "afna": {
+   "univ_id": "afna",
+   "name": "국군간호사관학교",
+   "aliases": [
+    "국군간호사관"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/susi1/afna/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "anyang": {
+   "univ_id": "anyang",
+   "name": "안양대학교",
+   "aliases": [
+    "안양대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/anyang/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "bu": {
+   "univ_id": "bu",
+   "name": "백석대학교",
+   "aliases": [
+    "백석대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2026/free/bu/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "cau": {
+   "univ_id": "cau",
+   "name": "중앙대학교",
+   "aliases": [
+    "중앙대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/cau/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "cha": {
+   "univ_id": "cha",
+   "name": "차 의과학대학교",
+   "aliases": [
+    "차 의과학대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/cha/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "cku": {
+   "univ_id": "cku",
+   "name": "가톨릭관동대학교",
+   "aliases": [
+    "가톨릭관동대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/cku/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "dongduk": {
+   "univ_id": "dongduk",
+   "name": "동덕여자대학교",
+   "aliases": [
+    "동덕여자대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/dongduk/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "hallym": {
+   "univ_id": "hallym",
+   "name": "한림대학교",
+   "aliases": [
+    "한림대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/hallym/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "hanrw": {
+   "univ_id": "hanrw",
+   "name": "hanrw(대학명 미확인)",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/coll2/hanrw/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "hansung": {
+   "univ_id": "hansung",
+   "name": "한성대학교",
+   "aliases": [
+    "한성대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/hansung/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "hufs": {
+   "univ_id": "hufs",
+   "name": "한국외국어대학교",
+   "aliases": [
+    "한국외국어대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/hufs/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "inha": {
+   "univ_id": "inha",
+   "name": "인하대학교",
+   "aliases": [
+    "인하대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/inha/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "jbnu": {
+   "univ_id": "jbnu",
+   "name": "전북대학교",
+   "aliases": [
+    "전북대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/jbnu/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "jejunu": {
+   "univ_id": "jejunu",
+   "name": "제주대학교",
+   "aliases": [
+    "제주대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/jejunu/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "jeonju": {
+   "univ_id": "jeonju",
+   "name": "전주대학교",
+   "aliases": [
+    "전주대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2026/free/jeonju/pass/5/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "khu": {
+   "univ_id": "khu",
+   "name": "경희대학교",
+   "aliases": [
+    "경희대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/khu/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "kma": {
+   "univ_id": "kma",
+   "name": "육군사관학교",
+   "aliases": [
+    "육군사관"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/susi1/kma/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "kmou": {
+   "univ_id": "kmou",
+   "name": "국립한국해양대학교",
+   "aliases": [
+    "국립한국해양대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/kmou/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "kmu": {
+   "univ_id": "kmu",
+   "name": "계명대학교",
+   "aliases": [
+    "계명대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/kmu/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "knu": {
+   "univ_id": "knu",
+   "name": "경북대학교",
+   "aliases": [
+    "경북대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/knu/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "kookmin": {
+   "univ_id": "kookmin",
+   "name": "국민대학교",
+   "aliases": [
+    "국민대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/kookmin/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "korea": {
+   "univ_id": "korea",
+   "name": "고려대학교(서울)",
+   "aliases": [
+    "고려대학교",
+    "고려대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/korea/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "korea_sejong": {
+   "univ_id": "korea_sejong",
+   "name": "고려대학교(세종)",
+   "aliases": [
+    "고려대학교",
+    "고려대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/free/korea_sejong/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "koreatech": {
+   "univ_id": "koreatech",
+   "name": "한국기술교육대학교",
+   "aliases": [
+    "한국기술교육대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/koreatech/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "kw": {
+   "univ_id": "kw",
+   "name": "광운대학교",
+   "aliases": [
+    "광운대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/kw/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "kyonggi": {
+   "univ_id": "kyonggi",
+   "name": "경기대학교",
+   "aliases": [
+    "경기대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/kyonggi/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "navy": {
+   "univ_id": "navy",
+   "name": "해군사관학교",
+   "aliases": [
+    "해군사관"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/susi1/navy/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "scau": {
+   "univ_id": "scau",
+   "name": "디지털서울문화예술대학교",
+   "aliases": [
+    "디지털서울문화예술대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2026/degree/scau/pass/3/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "sch": {
+   "univ_id": "sch",
+   "name": "순천향대학교",
+   "aliases": [
+    "순천향대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/sch/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "smuintro": {
+   "univ_id": "smuintro",
+   "name": "상명대학교",
+   "aliases": [
+    "상명대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/smuintro/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "snut": {
+   "univ_id": "snut",
+   "name": "서울과학기술대학교",
+   "aliases": [
+    "서울과학기술대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi3.uwayapply.com/2027/fores/snut/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "uos": {
+   "univ_id": "uos",
+   "name": "서울시립대학교",
+   "aliases": [
+    "서울시립대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/uos/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "yongin": {
+   "univ_id": "yongin",
+   "name": "용인대학교",
+   "aliases": [
+    "용인대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi2.uwayapply.com/2027/fores/yongin/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "yonsei2": {
+   "univ_id": "yonsei2",
+   "name": "연세대학교(미래)",
+   "aliases": [
+    "연세대학교 미래캠퍼스",
+    "연세대 미래캠퍼스",
+    "연세대학교(미래)"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://ipsi1.uwayapply.com/2027/fores/yonsei2/pass/1/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "namekor",
+     "exam_no": "applyno",
+     "birth8": "birthdate2"
+    },
+    "const_params": {
+     "mode": "check"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "최초합격",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "일치하는 정보가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회된 내역이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "정확하게 입력",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    }
+   ]
+  }
+ }
+}
