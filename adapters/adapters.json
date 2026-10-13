@@ -3,7 +3,8 @@
  "manual_check": {
   "이화여자대학교": "개인 인증번호 필요",
   "서강대학교": "개인 인증번호 필요",
-  "국민대학교": "전화번호 필요"
+  "국민대학교": "전화번호 필요",
+  "한국과학기술원": "직접 확인 대학 (선생님 지정)"
  },
  "adapters": {
   "afa": {
@@ -201,21 +202,28 @@
     "안양대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi2.uwayapply.com/2027/fores/anyang/pass/1/",
+    "url": "https://trs03.uwayapply.com/0381K6BK8TB4000000Q7JO/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "아리학생부면접"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -239,7 +247,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -256,34 +278,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
@@ -3115,21 +3109,28 @@
     "용인대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi2.uwayapply.com/2027/fores/yongin/pass/1/",
+    "url": "https://trs01.uwayapply.com/052OJOBV2579PSVVVURMFD/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "연극"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -3153,7 +3154,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -3170,34 +3185,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
@@ -3460,6 +3447,270 @@
      "text": "입력하신 정보가 존재하지 않습니다",
      "pattern": null,
      "result": "no_match",
+     "capture": false
+    }
+   ]
+  },
+  "sungkyul": {
+   "univ_id": "sungkyul",
+   "name": "성결대학교",
+   "aliases": [
+    "성결대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=E6EA8659AB",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_only": "SKU창의"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "dju": {
+   "univ_id": "dju",
+   "name": "대전대학교",
+   "aliases": [
+    "대전대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=8D9B6B4E18",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_only": "교과면접"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "suwon": {
+   "univ_id": "suwon",
+   "name": "수원대학교",
+   "aliases": [
+    "수원대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://ipsiold.suwon.ac.kr/exam/popEl2jSXpIEi.do",
+    "method": "POST",
+    "action_url": "https://ipsiold.suwon.ac.kr/exam/popSelect1CfcaTheatre.do",
+    "fields": {
+     "exam_no": "exmtNoCondition",
+     "name": "userNmCondition",
+     "birth6": "ssn1Condition"
+    },
+    "const_params": {
+     "_only": "연기예술",
+     "yearCondition": "2027",
+     "rcritDvcdCondition": "111",
+     "ssn2Condition": ""
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "해당하지 않는 지원자",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
      "capture": false
     }
    ]
