@@ -216,7 +216,8 @@
      "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "_only": "아리학생부면접"
+     "_only": "아리학생부면접",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
@@ -3123,7 +3124,8 @@
      "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "_only": "연극"
+     "_only": "연극",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
@@ -3472,7 +3474,8 @@
      "birth6": "SSN1"
     },
     "const_params": {
-     "_only": "SKU창의"
+     "_only": "SKU창의",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
@@ -3559,7 +3562,8 @@
      "birth6": "SSN1"
     },
     "const_params": {
-     "_only": "교과면접"
+     "_only": "교과면접",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
@@ -3649,7 +3653,8 @@
      "_only": "연기예술",
      "yearCondition": "2027",
      "rcritDvcdCondition": "111",
-     "ssn2Condition": ""
+     "ssn2Condition": "",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
@@ -3736,7 +3741,8 @@
      "birth6": "SSN1"
     },
     "const_params": {
-     "_only": "예체능"
+     "_only": "예체능",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
