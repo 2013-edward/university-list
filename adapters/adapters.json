@@ -4,7 +4,10 @@
   "이화여자대학교": "개인 인증번호 필요",
   "서강대학교": "개인 인증번호 필요",
   "국민대학교": "전화번호 필요",
-  "한국과학기술원": "직접 확인 대학 (선생님 지정)"
+  "한국과학기술원": "직접 확인 대학 (선생님 지정)",
+  "중앙대학교": "보안문자(CAPTCHA) 입력 필요",
+  "한양대학교ERICA캠퍼스": "지원자 통합서비스 로그인(비밀번호) 필요",
+  "한양대학교": "지원자 통합서비스 로그인(비밀번호) 필요"
  },
  "adapters": {
   "afa": {
@@ -3653,6 +3656,93 @@
     {
      "match": "contains",
      "text": "해당하지 않는 지원자",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "ssu": {
+   "univ_id": "ssu",
+   "name": "숭실대학교",
+   "aliases": [
+    "숭실대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=2F8A37F20497444DA40E148B4030B2C2",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_only": "예체능"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
      "pattern": null,
      "result": "no_match",
      "capture": false
