@@ -7,7 +7,8 @@
   "한국과학기술원": "직접 확인 대학 (선생님 지정)",
   "중앙대학교": "보안문자(CAPTCHA) 입력 필요",
   "한양대학교ERICA캠퍼스": "지원자 통합서비스 로그인(비밀번호) 필요",
-  "한양대학교": "지원자 통합서비스 로그인(비밀번호) 필요"
+  "한양대학교": "지원자 통합서비스 로그인(비밀번호) 필요",
+  "가톨릭대학교": "자동 조회 설정 없음 (부산가톨릭대와 구분) — 발표 페이지가 나오면 알려 주세요"
  },
  "adapters": {
   "afa": {
@@ -3895,6 +3896,122 @@
     {
      "match": "contains",
      "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "kku": {
+   "univ_id": "kku",
+   "name": "건국대학교(글로컬)",
+   "aliases": [
+    "건국대학교 글로컬캠퍼스",
+    "건국대학교글로컬캠퍼스",
+    "건국대학교(GLOCAL)",
+    "건국대학교 GLOCAL캠퍼스",
+    "건국대(글로컬)",
+    "건국대 글로컬",
+    "건국대글로컬",
+    "건국대학교(글로컬캠퍼스)"
+   ],
+   "engine": "http",
+   "encoding": "cp949",
+   "request": {
+    "url": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass1st_2027_prac/index_login.jsp",
+    "method": "GET",
+    "action_url": null,
+    "fields": {
+     "exam_no": "examNo",
+     "name": "korNm",
+     "birth6": "birth"
+    },
+    "const_params": {
+     "task": "f_EntrUserLogin",
+     "campFg": "",
+     "entrYy": "",
+     "collDiv": "",
+     "loginType": "2",
+     "encFg": "Y",
+     "_sha256": "birth",
+     "_stage": "1",
+     "_only": "체육특기자,스포츠건강,골프산업"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격 입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
