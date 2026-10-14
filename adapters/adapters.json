@@ -3949,7 +3949,8 @@
      "encFg": "Y",
      "_sha256": "birth",
      "_stage": "1",
-     "_only": "체육특기자,스포츠건강,골프산업"
+     "_only": "체육특기자,스포츠건강,골프산업",
+     "_next_url": "passAnun.jsp?seltType={}"
     }
    },
    "verdict_rules": [
@@ -3970,6 +3971,20 @@
     {
      "match": "contains",
      "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없",
      "pattern": null,
      "result": "fail",
      "capture": false
@@ -4012,6 +4027,13 @@
     {
      "match": "contains",
      "text": "합격 입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하합니다",
      "pattern": null,
      "result": "pass",
      "capture": false
