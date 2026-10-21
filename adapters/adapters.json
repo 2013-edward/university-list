@@ -1514,21 +1514,29 @@
     "경희대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi3.uwayapply.com/2027/fores/khu/pass/1/",
+    "url": "https://trs03.uwayapply.com/052JJOBV257CFR000001ON/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "한국화,회화,조소,연극,뮤지컬",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -1552,7 +1560,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -1569,34 +1591,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
