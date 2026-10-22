@@ -8,9 +8,7 @@
   "중앙대학교": "보안문자(CAPTCHA) 입력 필요",
   "한양대학교ERICA캠퍼스": "지원자 통합서비스 로그인(비밀번호) 필요",
   "한양대학교": "지원자 통합서비스 로그인(비밀번호) 필요",
-  "가톨릭대학교": "자동 조회 설정 없음 (부산가톨릭대와 구분) — 발표 페이지가 나오면 알려 주세요",
-  "고려대학교": "개인별 조회 화면이 암호화 로그인이라 자동 조회 불가 — inquiry.korea.ac.kr 에서 직접 확인 (최종 발표는 고교별 합격자 조회 화면을 불러오기)",
-  "고려대학교(서울)": "개인별 조회 화면이 암호화 로그인이라 자동 조회 불가 — inquiry.korea.ac.kr 에서 직접 확인 (최종 발표는 고교별 합격자 조회 화면을 불러오기)"
+  "가톨릭대학교": "자동 조회 설정 없음 (부산가톨릭대와 구분) — 발표 페이지가 나오면 알려 주세요"
  },
  "adapters": {
   "afa": {
@@ -2075,46 +2073,38 @@
     "고려대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi2.uwayapply.com/2027/fores/korea/pass/1/",
+    "url": "https://trs01.uwayapply.com/0381K6BKA7H4000000Q7JO/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_stage": "1"
     }
    },
    "verdict_rules": [
     {
-     "match": "regex",
-     "text": null,
-     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
-     "result": "waitlist",
-     "capture": true
-    },
-    {
      "match": "contains",
-     "text": "불합격",
+     "text": "조회된 데이터가 없습니다",
      "pattern": null,
-     "result": "fail",
+     "result": "not_open",
      "capture": false
     },
     {
-     "match": "contains",
-     "text": "합격을 축하",
-     "pattern": null,
+     "match": "regex",
+     "text": null,
+     "pattern": "(모집단위|모집학과|지원학과|학부\\(과\\))\\s*[:：]?\\s*\\S",
      "result": "pass",
      "capture": false
     },
     {
-     "match": "contains",
-     "text": "최초합격",
-     "pattern": null,
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*(일시|장소|고사장|시간)",
      "result": "pass",
      "capture": false
     },
@@ -2130,34 +2120,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
