@@ -2075,21 +2075,27 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://trs01.uwayapply.com/0381K6BKA7H4000000Q7JO/login",
+    "url": "https://inquiry.korea.ac.kr/?params=eyJtZW51SWQiOiJNMTEyODcwIiwibG9jYWxlIjoia28ifQ==",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "exam_no": "APPLYNO",
-     "birth6": "BIRTHDATE6"
+     "exam_no": "exam_no",
+     "birth8": "birth",
+     "name": "app_nm"
     },
     "const_params": {
+     "_browser": "1",
+     "_b_frame": "iframe",
+     "_b_fill": "#input-exam_no=exam_no,#input-birth=birth8,#input-app_nm=name",
+     "_b_click": "button:has-text('로그인')",
+     "_b_wait_ms": "20000",
      "_stage": "1"
     }
    },
    "verdict_rules": [
     {
      "match": "contains",
-     "text": "조회된 데이터가 없습니다",
+     "text": "지원자 명단에 없습니다",
      "pattern": null,
      "result": "not_open",
      "capture": false
@@ -2097,14 +2103,56 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "(모집단위|모집학과|지원학과|학부\\(과\\))\\s*[:：]?\\s*\\S",
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
      "result": "pass",
      "capture": false
     },
     {
-     "match": "regex",
-     "text": null,
-     "pattern": "면접\\s*(일시|장소|고사장|시간)",
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격 입니다",
+     "pattern": null,
      "result": "pass",
      "capture": false
     },
