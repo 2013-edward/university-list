@@ -2089,7 +2089,9 @@
      "_b_fill": "#input-exam_no=exam_no,#input-birth=birth8,#input-app_nm=name",
      "_b_click": "button:has-text('로그인')",
      "_b_wait_ms": "20000",
-     "_stage": "1"
+     "_stage": "1",
+     "_b_done": "합격여부|지원자\\s*명단에\\s*없|발표기간이\\s*아닙니다",
+     "_recheck_before": "2026-10-23 08:40"
     }
    },
    "verdict_rules": [
@@ -2103,9 +2105,23 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "pattern": "발표기간이\\s*아닙니다",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?:예비|대기)\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
      "result": "waitlist",
      "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부\\s*불합격",
+     "result": "fail",
+     "capture": false
     },
     {
      "match": "contains",
@@ -2115,10 +2131,10 @@
      "capture": false
     },
     {
-     "match": "contains",
-     "text": "아쉽게도",
-     "pattern": null,
-     "result": "fail",
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부\\s*합격",
+     "result": "pass",
      "capture": false
     },
     {
@@ -2126,48 +2142,6 @@
      "text": "축하",
      "pattern": null,
      "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격하셨습니다",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격하였습니다",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격입니다",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격 입니다",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표 기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
      "capture": false
     }
    ]
