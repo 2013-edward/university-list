@@ -4225,6 +4225,122 @@
      "capture": false
     }
    ]
+  },
+  "nsu": {
+   "univ_id": "nsu",
+   "name": "남서울대학교",
+   "aliases": [
+    "남서울대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://r4-pass02.mncapro.com/nsu/pass/pass.php?CODE=RnF3ekw4SVVnekR2QXR2dXdlZG5kVGtZR1B4ZGNnL1hpc2ExWDZoUEN1bz0=",
+    "method": "POST",
+    "action_url": "https://r4-pass02.mncapro.com/nsu/pass/result.php",
+    "fields": {
+     "name": "USER_NM1",
+     "exam_no": "EXAM_NO_T",
+     "birth6": "BIRTH_DAY"
+    },
+    "const_params": {
+     "ipsiyear": "2027",
+     "apply_cd": "02",
+     "apply_gr": "1",
+     "service_cd": "examroom6",
+     "chasu": "0",
+     "service_gb": "1",
+     "_pre_posts": "student_list.php,resultConfig.php",
+     "_only": "면접형,학생부종합",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "notinfo",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "nottime",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*(대상|일시|고사장|장소)",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
   }
  }
 }
