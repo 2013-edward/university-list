@@ -4327,6 +4327,74 @@
      "capture": false
     }
    ]
+  },
+  "woosuk": {
+   "univ_id": "woosuk",
+   "name": "우석대학교",
+   "aliases": [
+    "우석대",
+    "우석대학교(전주)",
+    "우석대학교(진천)"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://nwas.woosuk.ac.kr/module/index.do?menuSeq=6349",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "birth6": "ssn",
+     "exam_no": "no",
+     "name": "nm"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_type": "1",
+     "_b_fill": "[id$=\"div_search.form.Edit00:input\"]=birth6,[id$=\"div_search.form.MaskEdit00_00:input\"]=exam_no,[id$=\"div_search.form.Edit00_00_00:input\"]=name",
+     "_b_click": "[id$=\"div_search.form.btn_apply\"]",
+     "_b_capture": "/nx/doAction",
+     "_b_cols": "seltTypeNm=전형명,invitUnitNm=모집단위,passNm=합격여부,seq1PassYn=1단계합격",
+     "_b_wait_ms": "25000",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회 결과 없음",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "1단계합격\\s*Y\\b",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "1단계합격\\s*N\\b",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부\\s*\\S*합격",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
