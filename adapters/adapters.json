@@ -3281,15 +3281,18 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_susi_fin_ALL/pass.asp",
+    "url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_1st_bdbhcc/pass.asp",
     "method": "POST",
-    "action_url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_susi_fin_ALL/pass_ok.asp",
+    "action_url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_1st_bdbhcc/pass_ok.asp",
     "fields": {
      "name": "Name",
      "exam_no": "Suhumno",
      "birth6": "Birthdate"
     },
-    "const_params": {}
+    "const_params": {
+     "_only": "국제인재,기회균형,체육인재",
+     "_stage": "1"
+    }
    },
    "verdict_rules": [
     {
@@ -3311,6 +3314,20 @@
      "text": "불합격",
      "pattern": null,
      "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상(?:자)?\\s*(?:이|가)\\s*아닙",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상",
+     "result": "pass",
      "capture": false
     },
     {
