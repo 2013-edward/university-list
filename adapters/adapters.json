@@ -3317,6 +3317,20 @@
      "capture": false
     },
     {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "선발되지",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
      "match": "regex",
      "text": null,
      "pattern": "면접\\s*대상(?:자)?\\s*(?:이|가)\\s*아닙",
@@ -3326,7 +3340,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "면접\\s*대상",
+     "pattern": "면접\\s*대상(?:자)?\\s*(?:입니다|이십니다|로\\s*선정|으로\\s*선정|에\\s*해당)",
      "result": "pass",
      "capture": false
     },
