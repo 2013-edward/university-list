@@ -3186,47 +3186,32 @@
     "연세대학교(미래)"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi1.uwayapply.com/2027/fores/yonsei2/pass/1/",
+    "url": "https://yswa.yonsei.ac.kr/EXP/2027/SS/SI/27ss_interV_check.asp",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "exam_no": "p_ExNo",
+     "birth6": "p_birth"
     },
     "const_params": {
-     "mode": "check"
+     "_browser": "1",
+     "_b_fill": "[name=\"p_ExNo\"]=exam_no,[name=\"p_birth\"]=birth6",
+     "_b_click": "a:has-text('조회')",
+     "_b_done": "면접|대상|없습니다|아닙니다|합격|확인",
+     "_b_wait_ms": "15000",
+     "_only": "학교생활우수자,글로벌인재",
+     "_except": "의예",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
     {
      "match": "regex",
      "text": null,
-     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
-     "result": "waitlist",
-     "capture": true
-    },
-    {
-     "match": "contains",
-     "text": "불합격",
-     "pattern": null,
-     "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격을 축하",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "최초합격",
-     "pattern": null,
-     "result": "pass",
+     "pattern": "(조회된|검색된)\\s*(자료|내용|정보)가?\\s*없|정확(히|하게)\\s*입력",
+     "result": "no_match",
      "capture": false
     },
     {
@@ -3244,31 +3229,31 @@
      "capture": false
     },
     {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
+     "match": "regex",
+     "text": null,
+     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도",
+     "result": "fail",
      "capture": false
     },
     {
      "match": "contains",
-     "text": "조회된 내역이 없습니다",
+     "text": "불합격",
      "pattern": null,
-     "result": "no_match",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상(?:자)?\\s*(?:입니다|이십니다|로\\s*선정|으로\\s*선정|에\\s*해당)",
+     "result": "pass",
      "capture": false
     },
     {
      "match": "contains",
-     "text": "정확하게 입력",
+     "text": "축하",
      "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
+     "result": "pass",
      "capture": false
     }
    ]
