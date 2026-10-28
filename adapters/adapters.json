@@ -4465,7 +4465,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
      "result": "waitlist",
      "capture": true
     },
@@ -4508,6 +4508,13 @@
      "match": "regex",
      "text": null,
      "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
      "result": "pass",
      "capture": false
     }
