@@ -2344,21 +2344,29 @@
     "광운대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi3.uwayapply.com/2027/fores/kw/pass/1/",
+    "url": "https://trs01.uwayapply.com/052MJOBV257CE97VVUT5B2/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "면접형,소프트웨어우수,참빛인재Ⅰ",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -2374,6 +2382,13 @@
      "capture": false
     },
     {
+     "match": "regex",
+     "text": null,
+     "pattern": "(입실\\s*(시간|장소)|고사장\\s*(안내|정보|:))",
+     "result": "pass",
+     "capture": false
+    },
+    {
      "match": "contains",
      "text": "합격을 축하",
      "pattern": null,
@@ -2382,7 +2397,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -2399,34 +2428,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
@@ -4409,6 +4410,104 @@
      "match": "regex",
      "text": null,
      "pattern": "합격여부\\s*\\S*합격",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "sjs": {
+   "univ_id": "sjs",
+   "name": "서울장신대학교",
+   "aliases": [
+    "서울장신대",
+    "장신대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "http://ibsi.sjs.ac.kr/ibsi/hagbu_101013/slim_index.htm?a_year=2027",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "exam_no": "suheom_no",
+     "name": "jiweonja_nm"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_fill": "[name=\"suheom_no\"]=exam_no,[name=\"jiweonja_nm\"]=name",
+     "_b_click": "form[name=search] button[type=submit]",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인",
+     "_b_wait_ms": "15000"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
      "result": "pass",
      "capture": false
     }
