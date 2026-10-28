@@ -3328,6 +3328,13 @@
     },
     {
      "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
      "text": "불합격",
      "pattern": null,
      "result": "fail",
