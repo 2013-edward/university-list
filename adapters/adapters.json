@@ -3279,7 +3279,8 @@
     },
     "const_params": {
      "_only": "국제인재,기회균형,체육인재",
-     "_stage": "1"
+     "_stage": "1",
+     "_recheck_before": "2026-10-29 08:00"
     }
    },
    "verdict_rules": [
@@ -3298,9 +3299,9 @@
      "capture": true
     },
     {
-     "match": "contains",
-     "text": "불합격",
-     "pattern": null,
+     "match": "regex",
+     "text": null,
+     "pattern": "선발되지|대상자?가\\s*아닙",
      "result": "fail",
      "capture": false
     },
@@ -3312,31 +3313,24 @@
      "capture": false
     },
     {
-     "match": "contains",
-     "text": "선발되지",
-     "pattern": null,
-     "result": "fail",
-     "capture": false
-    },
-    {
      "match": "regex",
      "text": null,
-     "pattern": "면접\\s*대상(?:자)?\\s*(?:이|가)\\s*아닙",
-     "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "regex",
-     "text": null,
-     "pattern": "면접\\s*대상(?:자)?\\s*(?:입니다|이십니다|로\\s*선정|으로\\s*선정|에\\s*해당)",
+     "pattern": "대상자\\s*로\\s*선발되|면접\\s*대상(?:자)?\\s*(?:입니다|이십니다|로\\s*선정|으로\\s*선정|에\\s*해당)",
      "result": "pass",
      "capture": false
     },
     {
      "match": "contains",
-     "text": "합격을 축하",
+     "text": "축하합니다",
      "pattern": null,
      "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
      "capture": false
     },
     {
