@@ -4699,6 +4699,66 @@
      "capture": false
     }
    ]
+  },
+  "csu": {
+   "univ_id": "csu",
+   "name": "총신대학교",
+   "aliases": [
+    "총신대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://haksa.csu.ac.kr/Haksa/Ibsi/Daehag/ibsi_2027/susi_habgyeog_gaein_johoe_2027_1st/susi_habgyeog_gaein_login.jsp",
+    "method": "POST",
+    "action_url": "https://haksa.csu.ac.kr/Haksa/Ibsi/Daehag/ibsi_2027/susi_habgyeog_gaein_johoe_2027_1st/susi_habgyeog_gaein_johoe.jsp",
+    "fields": {
+     "name": "ireum",
+     "birth6": "birthday",
+     "exam_no": "suheom_no"
+    },
+    "const_params": {
+     "_only": "코람데오,총신고른기회,고른기회,대안학교,외국어,영어우수,기초생활,차상위,특수교육",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*(?:자료|정보|내역)가?\\s*없|조회(?:된|할)\\s*(?:자료|정보|내역|결과)가?\\s*없|존재하지\\s*않|정확(?:히|하게)\\s*입력|확인하여\\s*주시기|지원\\s*내역이?\\s*없",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아닙니다",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1단계\\s*)?(?:서류\\s*)?불합격|아쉽게도|선발되지",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<![/／])(?<![/／]\\s)불합격(?!\\s*으로\\s*구분)",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1단계\\s*)?(?:서류\\s*)?합격(?!자)|서류\\s*합격(?!\\s*[/／]\\s*불합격)|축하|합격하셨습니다|합격하였습니다|합격\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
