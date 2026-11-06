@@ -1837,21 +1837,29 @@
     "경북대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi3.uwayapply.com/2027/fores/knu/pass/1/",
+    "url": "https://trs01.uwayapply.com/052LJOBV25744KO000UIT2/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "지역인재,지역의사,학교장추천,고졸재직자,영농창업,SW특별,특성화고졸재직자,모바일과학,장애인",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -1875,7 +1883,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -1892,34 +1914,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
@@ -5065,6 +5059,111 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "bible": {
+   "univ_id": "bible",
+   "name": "한국성서대학교",
+   "aliases": [
+    "한국성서대",
+    "성서대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://newstar.bible.ac.kr/Department/2027star/PassInquiry.aspx",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "exam_no": "Newsu",
+     "birth6": "NewStJumin1"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_fill": "#Newsu=exam_no,#NewStJumin1=birth6",
+     "_b_click": "#Submt1",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인",
+     "_b_wait_ms": "15000"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
      "capture": false
     }
    ]
