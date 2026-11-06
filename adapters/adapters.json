@@ -4821,7 +4821,7 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=739A4A965B",
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=94A466D410",
     "method": "POST",
     "action_url": null,
     "fields": {
@@ -4830,8 +4830,7 @@
      "birth6": "SSN1"
     },
     "const_params": {
-     "_only": "영화예술",
-     "_stage": "1"
+     "_only": "실기우수자,예체능특기자"
     }
    },
    "verdict_rules": [
@@ -4854,20 +4853,6 @@
      "text": "불합격",
      "pattern": null,
      "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "regex",
-     "text": null,
-     "pattern": "면접\\s*대상(자)?\\s*(이|가)\\s*아닙",
-     "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "regex",
-     "text": null,
-     "pattern": "면접\\s*대상",
-     "result": "pass",
      "capture": false
     },
     {
