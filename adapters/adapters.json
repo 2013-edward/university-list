@@ -954,21 +954,28 @@
     "한성대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi1.uwayapply.com/2027/fores/hansung/pass/1/",
+    "url": "https://trs02.uwayapply.com/052YJOBV257BRH7VVUKC54/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_except": "교과우수"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -992,7 +999,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -1009,34 +1030,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
@@ -1606,89 +1599,45 @@
     "육군사관"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi1.uwayapply.com/2027/susi1/kma/pass/1/",
+    "url": "https://trs03.uwayapply.com/052JJOBV25AREK000001ON/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
-    "const_params": {
-     "mode": "check"
-    }
+    "const_params": {}
    },
    "verdict_rules": [
     {
-     "match": "regex",
-     "text": null,
-     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
-     "result": "waitlist",
-     "capture": true
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
     },
     {
-     "match": "contains",
-     "text": "불합격",
-     "pattern": null,
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아닙니다",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "^(?![\\s\\S]*종합선발\\s*대상자?\\s*(?:입니다|이십니다|으로|로\\s*선(?:정|발)))[\\s\\S]*(?:불합격|선발되지)",
      "result": "fail",
      "capture": false
     },
     {
-     "match": "contains",
-     "text": "합격을 축하",
-     "pattern": null,
+     "match": "regex",
+     "text": null,
+     "pattern": "^(?![\\s\\S]*종합선발\\s*대상자?\\s*(?:입니다|이십니다|으로|로\\s*선(?:정|발)))[\\s\\S]*(?:합격을\\s*축하|합격하셨습니다|합격하였습니다|합격\\s*입니다|최종\\s*합격(?!자)|(?:우선선발|특별전형)\\s*합격(?!자))",
      "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "최초합격",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표 기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
