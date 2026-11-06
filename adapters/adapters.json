@@ -4760,6 +4760,380 @@
      "capture": false
     }
    ]
+  },
+  "sejong": {
+   "univ_id": "sejong",
+   "name": "세종대학교",
+   "aliases": [
+    "세종대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=C05DB6D05D",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_only": "항공시스템",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상(자)?\\s*(이|가)\\s*아닙",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "sejong2": {
+   "univ_id": "sejong2",
+   "name": "세종대학교",
+   "aliases": [
+    "세종대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=739A4A965B",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_only": "영화예술",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상(자)?\\s*(이|가)\\s*아닙",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "hanshin": {
+   "univ_id": "hanshin",
+   "name": "한신대학교",
+   "aliases": [
+    "한신대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=D5FADE982F8F47509F88E958BE15FF3E",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {}
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "mokwon": {
+   "univ_id": "mokwon",
+   "name": "목원대학교",
+   "aliases": [
+    "목원대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=273E9E89F50442E69D02D9D0E9BA91B5",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {}
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
   }
  }
 }
