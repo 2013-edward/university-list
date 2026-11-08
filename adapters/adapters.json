@@ -4610,7 +4610,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도|합격자\\s*명단에\\s*없",
+     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도|(?:합격자|대상자)\\s*명단에\\s*없",
      "result": "fail",
      "capture": false
     },
@@ -5211,7 +5211,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도|합격자\\s*명단에\\s*없",
+     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도|(?:합격자|대상자)\\s*명단에\\s*없",
      "result": "fail",
      "capture": false
     },
@@ -5286,7 +5286,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도|합격자\\s*명단에\\s*없",
+     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도|(?:합격자|대상자)\\s*명단에\\s*없",
      "result": "fail",
      "capture": false
     },
