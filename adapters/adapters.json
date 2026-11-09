@@ -6614,6 +6614,121 @@
      "capture": false
     }
    ]
+  },
+  "hit": {
+   "univ_id": "hit",
+   "name": "대전보건대학교",
+   "aliases": [
+    "대전보건대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://r4-pass.mncapro.com/hit/pass/pass.php?CODE=TDljdHdURHU3K3AvakhJOWdhLzZLMkRjSWQ5cDFaZFR1RUNiVFd6c2RjVT0=",
+    "method": "POST",
+    "action_url": "https://r4-pass.mncapro.com/hit/pass/result.php",
+    "fields": {
+     "name": "USER_NM1",
+     "exam_no": "EXAM_NO_T",
+     "birth6": "BIRTH_DAY"
+    },
+    "const_params": {
+     "ipsiyear": "2027",
+     "apply_cd": "B",
+     "apply_gr": "1",
+     "service_cd": "susiPass1",
+     "service_gb": "1",
+     "chasu": "0",
+     "_pre_posts": "student_list.php,resultConfig.php",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "notinfo",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "nottime",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:후보|번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격(?!\\s*-->)|합격\\s*을\\s*(?:진심으로\\s*)?축하",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
   }
  }
 }
