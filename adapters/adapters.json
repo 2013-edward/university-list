@@ -33,7 +33,8 @@
   "한국폴리텍II인천대학": "폴리텍 입시포털 합격자 조회가 넥사크로 화면이라 자동 조회하지 않음 — https://ipsi.kopo.ac.kr '합격자 조회'에서 직접 확인",
   "우송정보대학": "합격자 조회에 휴대폰 번호가 필요해 자동 조회하지 않음 — https://ent.wsi.ac.kr '합격자 조회 및 고지서 출력'에서 직접 확인",
   "한국관광대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://announce.ktc.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
-  "대림대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.daelim.ac.kr/Announcement/Announcement.asp 에서 직접 확인"
+  "대림대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.daelim.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
+  "백제예술대학교": "합격자 조회 결과가 합격증(PDF) 출력 방식이라 자동 조회하지 않음 — 백제예대 입시홈페이지 '합격자발표'에서 직접 확인"
  },
  "adapters": {
   "afa": {
@@ -6979,6 +6980,112 @@
     "const_params": {
      "_browser": "1",
      "_b_fill": "#appl_no=exam_no,#jumin_no1=birth6",
+     "_b_click": "button:has-text('로그인')",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인",
+     "_b_wait_ms": "20000",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "konyang": {
+   "univ_id": "konyang",
+   "name": "건양대학교",
+   "aliases": [
+    "건양대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://entrance.kyu.ac.kr/login",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "exam_no": "suheomNo",
+     "name": "name",
+     "birth6": "yymmdd"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_fill": "#suheomNo=exam_no,#name=name,#yymmdd=birth6",
      "_b_click": "button:has-text('로그인')",
      "_b_done": "합격|불합격|예비|일치|없습니다|확인",
      "_b_wait_ms": "20000",
