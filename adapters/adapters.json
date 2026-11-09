@@ -3679,7 +3679,7 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=2F8A37F20497444DA40E148B4030B2C2",
+    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=4BF56A1CE2EC4D33A277AC734B63095C",
     "method": "POST",
     "action_url": null,
     "fields": {
@@ -3689,7 +3689,7 @@
     },
     "const_params": {
      "_only": "예체능",
-     "_stage": "1"
+     "_stage": "final"
     }
    },
    "verdict_rules": [
