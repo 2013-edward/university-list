@@ -16,7 +16,8 @@
   "신구대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.shingu.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "연성대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.yeonsung.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "명지전문대학": "합격자 조회 화면이 2단계 방식이라 자동 조회하지 않음 — 명지전문대 첫 화면의 '수시1차모집 합격자 발표'(pass1.mjc.ac.kr)에서 직접 확인",
-  "인하공업전문대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://result.inhatc.ac.kr/Announcement/Announcement.asp 에서 직접 확인"
+  "인하공업전문대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://result.inhatc.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
+  "백석예술대학교": "합격자 발표 화면이 접속대기(NetFUNNEL)와 팝업, 입력값 암호화 방식이라 자동 조회하지 않음 — bau.ac.kr 입시서비스 '합격자 발표'에서 직접 확인"
  },
  "adapters": {
   "afa": {
