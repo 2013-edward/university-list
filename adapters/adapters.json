@@ -37,7 +37,8 @@
   "백제예술대학교": "합격자 조회 결과가 합격증(PDF) 출력 방식이라 자동 조회하지 않음 — 백제예대 입시홈페이지 '합격자발표'에서 직접 확인",
   "서정대학": "합격자 조회에 휴대폰 번호가 필요해 자동 조회하지 않음 — https://apply.seojeong.ac.kr/GateWeb/Apply/Login_Passed.aspx?UnivDiv=1 에서 직접 확인",
   "경민대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — 경민대 입학홈페이지 공지 '수시1차 합격자 발표 안내'의 바로가기에서 직접 확인",
-  "영남이공대학교": "합격자 확인에 휴대폰 번호와 주민번호 뒷자리가 필요해 자동 조회하지 않음 — https://exam.ync.ac.kr '합격자확인'에서 직접 확인"
+  "영남이공대학교": "합격자 확인에 휴대폰 번호와 주민번호 뒷자리가 필요해 자동 조회하지 않음 — https://exam.ync.ac.kr '합격자확인'에서 직접 확인",
+  "부천대학": "합격자 발표 링크가 네이버 단축주소라 자동으로 열 수 없어 직접 확인 — 부천대 입학홈페이지 '2027학년도 수시1차합격자 발표 바로가기'"
  },
  "adapters": {
   "afa": {
@@ -7585,6 +7586,94 @@
    "encoding": "utf-8",
    "request": {
     "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=D0D83E0EA1",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "ck": {
+   "univ_id": "ck",
+   "name": "청강문화산업대학",
+   "aliases": [
+    "청강문화산업대학교",
+    "청강문화산업대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=0515674BEB",
     "method": "POST",
     "action_url": null,
     "fields": {
