@@ -6463,6 +6463,67 @@
      "capture": false
     }
    ]
+  },
+  "yewon": {
+   "univ_id": "yewon",
+   "name": "예원예술대학교",
+   "aliases": [
+    "예원예대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://old.yewon.ac.kr/Pass/",
+    "method": "POST",
+    "action_url": "https://old.yewon.ac.kr/Pass/Search_ok.jsp",
+    "fields": {
+     "exam_no": "hnum"
+    },
+    "const_params": {
+     "sType": "Search",
+     "gubun": "I",
+     "mozip": "21",
+     "search": "hnum",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*(?:정보|자료|합격자|지원자)\\s*가?\\s*없|조회된\\s*(?:정보|자료|데이터|내역)\\s*가?\\s*없|존재하지\\s*않|확인하여\\s*주십시오",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "조회\\s*기간이\\s*아닙|발표\\s*기간이\\s*아닙",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위|합격)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "불합격|아쉽게도",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격|최초\\s*합격(?!자)|합격을\\s*축하|합격하셨|합격하였|합격\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
