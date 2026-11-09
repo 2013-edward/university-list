@@ -12,7 +12,10 @@
   "호원대학교": "주민등록번호 뒤 7자리가 필요해 자동 조회하지 않음 — 수시모집 합격자 조회 화면에서 직접 확인",
   "청운대학교": "지원자 휴대폰 번호가 필요해 자동 조회하지 않음 — 수시모집 합격자 발표 화면(https://trs02.uwayapply.com/0383K6BK4D6G000000OOO3)에서 직접 확인",
   "한국예술종합학교": "합격여부 확인에 주민번호 뒤 4자리가 필요해 자동 조회하지 않음 — 한예종 입학정보 '합격여부확인'에서 직접 확인",
-  "서울예술대학교": "합격 확인(수험생정보서비스)에 본인 휴대폰 번호가 필요해 자동 조회하지 않음 — sportal.seoularts.ac.kr 에서 직접 확인"
+  "서울예술대학교": "합격 확인(수험생정보서비스)에 본인 휴대폰 번호가 필요해 자동 조회하지 않음 — sportal.seoularts.ac.kr 에서 직접 확인",
+  "신구대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.shingu.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
+  "연성대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.yeonsung.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
+  "명지전문대학": "합격자 조회 화면이 2단계 방식이라 자동 조회하지 않음 — 명지전문대 첫 화면의 '수시1차모집 합격자 발표'(pass1.mjc.ac.kr)에서 직접 확인"
  },
  "adapters": {
   "afa": {
@@ -5643,6 +5646,91 @@
     {
      "match": "contains",
      "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "hywoman": {
+   "univ_id": "hywoman",
+   "name": "한양여자대학교",
+   "aliases": [
+    "한양여대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=3A5A7D561ED049EBBE51F8F215B953A4",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {}
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
      "pattern": null,
      "result": "fail",
      "capture": false
