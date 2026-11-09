@@ -5940,6 +5940,68 @@
      "capture": false
     }
    ]
+  },
+  "ssc": {
+   "univ_id": "ssc",
+   "name": "수원과학대학교",
+   "aliases": [
+    "수원과학대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://ipsi.ssc.ac.kr/quick/successfulLogin_2.do?link_seq=18",
+    "method": "POST",
+    "action_url": "https://ipsi.ssc.ac.kr/quick/successfulView_2.do",
+    "fields": {
+     "exam_no": "StudentCode",
+     "birth6": "birthDt",
+     "name": "userNmCondition"
+    },
+    "const_params": {
+     "yearCondition": "2027",
+     "tpexSchdCdCondition": "75",
+     "rcritDvcdCondition": "01",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*(?:정보|자료|합격자|지원자)\\s*가?\\s*없|조회된\\s*(?:정보|자료|데이터)\\s*가?\\s*없|존재하지\\s*않",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아닙|조회\\s*기간이\\s*아닙",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위|합격)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "불합격|아쉽게도",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격|최초\\s*합격(?!자)|합격을\\s*축하|합격하셨|합격하였|합격\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
