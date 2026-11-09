@@ -7171,6 +7171,93 @@
      "capture": false
     }
    ]
+  },
+  "nambu": {
+   "univ_id": "nambu",
+   "name": "남부대학교",
+   "aliases": [
+    "남부대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://trs03.uwayapply.com/0389K6BK73H4000000KC54/login",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
+    },
+    "const_params": {
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
   }
  }
 }
