@@ -5653,6 +5653,13 @@
      "capture": false
     },
     {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격|합격\\s*을\\s*(?:진심으로\\s*)?축하",
+     "result": "pass",
+     "capture": false
+    },
+    {
      "match": "contains",
      "text": "합격을 축하",
      "pattern": null,
