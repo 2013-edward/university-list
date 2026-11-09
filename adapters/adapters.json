@@ -5612,7 +5612,8 @@
      "service_cd": "susiPass1",
      "chasu": "0",
      "service_gb": "1",
-     "_pre_posts": "student_list.php,resultConfig.php"
+     "_pre_posts": "student_list.php,resultConfig.php",
+     "_stage": "final"
     }
    },
    "verdict_rules": [
@@ -5712,7 +5713,9 @@
      "exam_no": "ExamNo",
      "birth6": "SSN1"
     },
-    "const_params": {}
+    "const_params": {
+     "_stage": "final"
+    }
    },
    "verdict_rules": [
     {
@@ -5798,7 +5801,9 @@
      "exam_no": "ExamNo",
      "birth6": "SSN1"
     },
-    "const_params": {}
+    "const_params": {
+     "_stage": "final"
+    }
    },
    "verdict_rules": [
     {
@@ -5887,7 +5892,8 @@
      "siteId": "admission",
      "fnctNo": "67",
      "viewTab": "5",
-     "_b64": "suhuNub=suhuNub2,stntBirth=stntBirth2"
+     "_b64": "suhuNub=suhuNub2,stntBirth=stntBirth2",
+     "_stage": "final"
     }
    },
    "verdict_rules": [
