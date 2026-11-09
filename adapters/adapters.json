@@ -10,7 +10,8 @@
   "한양대학교": "지원자 통합서비스 로그인(비밀번호) 필요",
   "가톨릭대학교": "자동 조회 설정 없음 (부산가톨릭대와 구분) — 발표 페이지가 나오면 알려 주세요",
   "호원대학교": "주민등록번호 뒤 7자리가 필요해 자동 조회하지 않음 — 수시모집 합격자 조회 화면에서 직접 확인",
-  "청운대학교": "지원자 휴대폰 번호가 필요해 자동 조회하지 않음 — 수시모집 합격자 발표 화면(https://trs02.uwayapply.com/0383K6BK4D6G000000OOO3)에서 직접 확인"
+  "청운대학교": "지원자 휴대폰 번호가 필요해 자동 조회하지 않음 — 수시모집 합격자 발표 화면(https://trs02.uwayapply.com/0383K6BK4D6G000000OOO3)에서 직접 확인",
+  "한국예술종합학교": "합격여부 확인에 주민번호 뒤 4자리가 필요해 자동 조회하지 않음 — 한예종 입학정보 '합격여부확인'에서 직접 확인"
  },
  "adapters": {
   "afa": {
@@ -307,7 +308,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -779,7 +780,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -1052,7 +1053,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -1146,7 +1147,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -1240,7 +1241,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -1334,7 +1335,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -1428,7 +1429,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -1754,7 +1755,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -2195,21 +2196,29 @@
     "한국기술교육대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi2.uwayapply.com/2027/fores/koreatech/pass/1/",
+    "url": "https://trs03.uwayapply.com/0389K6BK7L3K000000KC54/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "창의인재,충남형",
+     "_stage": "1"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -2233,7 +2242,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -2250,34 +2273,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
@@ -2387,7 +2382,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -2669,7 +2664,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -2847,21 +2842,28 @@
     "서울과학기술대"
    ],
    "engine": "http",
-   "encoding": "euc-kr",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://ipsi3.uwayapply.com/2027/fores/snut/pass/1/",
+    "url": "https://trs02.uwayapply.com/052UJOBV25714I7VVUN9SE/login",
     "method": "POST",
     "action_url": null,
     "fields": {
-     "name": "namekor",
-     "exam_no": "applyno",
-     "birth8": "birthdate2"
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "실기"
     }
    },
    "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -2885,7 +2887,21 @@
     },
     {
      "match": "contains",
-     "text": "최초합격",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
@@ -2902,34 +2918,6 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "일치하는 정보가 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "조회된 내역이 없습니다",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "정확하게 입력",
-     "pattern": null,
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격자 명단에 없습니다",
-     "pattern": null,
-     "result": "no_match",
      "capture": false
     }
    ]
@@ -2952,7 +2940,7 @@
      "birth8": "birthdate2"
     },
     "const_params": {
-     "mode": "check"
+     "_only": "(발표 전)"
     }
    },
    "verdict_rules": [
@@ -3037,7 +3025,7 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://trs01.uwayapply.com/052OJOBV2579PSVVVURMFD/login",
+    "url": "https://trs01.uwayapply.com/052PJOBV2579PSO000RL5O/login",
     "method": "POST",
     "action_url": null,
     "fields": {
@@ -3046,8 +3034,7 @@
      "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "_only": "연극",
-     "_stage": "1"
+     "_except": "교과성적우수,체육우수"
     }
    },
    "verdict_rules": [
@@ -4084,7 +4071,7 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=BE75100FC92B4C86A6BDDAF9E6A8BA3B",
+    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=CEEA861DCB6D4A7B89FCE59BE2AA1EA2",
     "method": "POST",
     "action_url": null,
     "fields": {
@@ -4093,8 +4080,7 @@
      "birth6": "SSN1"
     },
     "const_params": {
-     "_only": "세움,기회균형,기균,특수,예체능,실기,실적",
-     "_stage": "1"
+     "_except": "논술"
     }
    },
    "verdict_rules": [
@@ -5434,6 +5420,123 @@
      "text": "불합격",
      "pattern": null,
      "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "kau": {
+   "univ_id": "kau",
+   "name": "한국항공대학교",
+   "aliases": [
+    "한국항공대",
+    "항공대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=15A3AAE617",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_only": "항공운항",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "신체검사\\s*대상(자)?\\s*(이|가)\\s*아닙|대상자\\s*명단에\\s*없",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "신체검사\\s*대상",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상(자)?\\s*(이|가)\\s*아닙",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상",
+     "result": "pass",
      "capture": false
     },
     {
