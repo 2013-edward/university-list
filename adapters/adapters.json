@@ -7959,6 +7959,94 @@
      "capture": false
     }
    ]
+  },
+  "cju": {
+   "univ_id": "cju",
+   "name": "청주대학교",
+   "aliases": [
+    "청주대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://trs02.uwayapply.com/0385K6BK7LSK000000N9SE/login",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
+    },
+    "const_params": {
+     "_only": "군사",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
   }
  }
 }
