@@ -16,7 +16,8 @@
   "신구대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.shingu.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "연성대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.yeonsung.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "명지전문대학": "합격자 조회 화면이 2단계 방식이라 자동 조회하지 않음 — 명지전문대 첫 화면의 '수시1차모집 합격자 발표'(pass1.mjc.ac.kr)에서 직접 확인",
-  "인하공업전문대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://result.inhatc.ac.kr/Announcement/Announcement.asp 에서 직접 확인"
+  "인하공업전문대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://result.inhatc.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
+  "동남보건대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://pass.dongnam.ac.kr/Announcement.asp 에서 직접 확인"
  },
  "adapters": {
   "afa": {
@@ -5998,6 +5999,199 @@
      "match": "regex",
      "text": null,
      "pattern": "합격\\s*여부\\s*[:：]?\\s*합격|최초\\s*합격(?!자)|합격을\\s*축하|합격하셨|합격하였|합격\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "dongyang": {
+   "univ_id": "dongyang",
+   "name": "동양미래대학교",
+   "aliases": [
+    "동양미래대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=F6BEBAEFF9",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "dima": {
+   "univ_id": "dima",
+   "name": "동아방송예술대학교",
+   "aliases": [
+    "동아방송예대",
+    "동아방송대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://wmw.dima.ac.kr/ipsi/_hak/hap/",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "tbxName",
+     "exam_no": "tbxSuheomBeonho"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_fill": "#tbxName=name,#tbxSuheomBeonho=exam_no",
+     "_b_click": "#ibtOK",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인",
+     "_b_wait_ms": "15000",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
      "result": "pass",
      "capture": false
     }
