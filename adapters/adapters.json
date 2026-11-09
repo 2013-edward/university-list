@@ -6735,6 +6735,228 @@
      "capture": false
     }
    ]
+  },
+  "gtec": {
+   "univ_id": "gtec",
+   "name": "경기과학기술대학교",
+   "aliases": [
+    "경기과기대",
+    "경기과학기술대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://r4-pass02.mncapro.com/gtec/pass/pass.php?CODE=aFdlVVZWcU9xdFMra1Z0Y0VLNFpFckVZdHpPWHpaY0pqNHNJRmg3Tkh2Zz0=",
+    "method": "POST",
+    "action_url": "https://r4-pass02.mncapro.com/gtec/pass/result.php",
+    "fields": {
+     "name": "USER_NM1",
+     "exam_no": "EXAM_NO_T",
+     "birth6": "BIRTH_DAY"
+    },
+    "const_params": {
+     "ipsiyear": "2027",
+     "apply_cd": "ET011",
+     "apply_gr": "1",
+     "service_cd": "susiHap1",
+     "service_gb": "1",
+     "chasu": "0",
+     "PRE_REC_CD": "N",
+     "_pre_posts": "student_list.php,resultConfig.php",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "notinfo",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "nottime",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:후보|번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격(?!\\s*-->)|합격\\s*을\\s*(?:진심으로\\s*)?축하",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "asc": {
+   "univ_id": "asc",
+   "name": "안동과학대학교",
+   "aliases": [
+    "안동과학대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://newipsi.asc.ac.kr/ipsi/ir/passSearch",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "suheomsaeng_nm",
+     "exam_no": "suheom_no"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_fill": "#suheom_no=exam_no,#suheomsaeng_nm=name",
+     "_b_click": "button:has-text('조회')",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인",
+     "_b_wait_ms": "15000",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
