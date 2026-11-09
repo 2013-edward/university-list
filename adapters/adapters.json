@@ -11,7 +11,8 @@
   "가톨릭대학교": "자동 조회 설정 없음 (부산가톨릭대와 구분) — 발표 페이지가 나오면 알려 주세요",
   "호원대학교": "주민등록번호 뒤 7자리가 필요해 자동 조회하지 않음 — 수시모집 합격자 조회 화면에서 직접 확인",
   "청운대학교": "지원자 휴대폰 번호가 필요해 자동 조회하지 않음 — 수시모집 합격자 발표 화면(https://trs02.uwayapply.com/0383K6BK4D6G000000OOO3)에서 직접 확인",
-  "한국예술종합학교": "합격여부 확인에 주민번호 뒤 4자리가 필요해 자동 조회하지 않음 — 한예종 입학정보 '합격여부확인'에서 직접 확인"
+  "한국예술종합학교": "합격여부 확인에 주민번호 뒤 4자리가 필요해 자동 조회하지 않음 — 한예종 입학정보 '합격여부확인'에서 직접 확인",
+  "서울예술대학교": "합격 확인(수험생정보서비스)에 본인 휴대폰 번호가 필요해 자동 조회하지 않음 — sportal.seoularts.ac.kr 에서 직접 확인"
  },
  "adapters": {
   "afa": {
@@ -5537,6 +5538,113 @@
      "text": null,
      "pattern": "면접\\s*대상",
      "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "dsu": {
+   "univ_id": "dsu",
+   "name": "동서울대학교",
+   "aliases": [
+    "동서울대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://r4-pass.mncapro.com/du/pass/pass.php?CODE=MDRiTnZ0dEJvQ0Z4T1l3Y2xFMEpmUkg3MTM1cU1pcmlxMlE4TDhrN0hvWT0=",
+    "method": "POST",
+    "action_url": "https://r4-pass.mncapro.com/du/pass/result.php",
+    "fields": {
+     "name": "USER_NM1",
+     "exam_no": "EXAM_NO_T",
+     "birth6": "BIRTH_DAY"
+    },
+    "const_params": {
+     "ipsiyear": "2027",
+     "apply_cd": "CET12002",
+     "apply_gr": "1",
+     "service_cd": "susiPass1",
+     "chasu": "0",
+     "service_gb": "1",
+     "_pre_posts": "student_list.php,resultConfig.php"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "notinfo",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "nottime",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
      "capture": false
     },
     {
