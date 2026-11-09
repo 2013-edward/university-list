@@ -5619,7 +5619,8 @@
      "chasu": "0",
      "service_gb": "1",
      "_pre_posts": "student_list.php,resultConfig.php",
-     "_stage": "final"
+     "_stage": "final",
+     "_recheck_before": "2026-11-09 14:15"
     }
    },
    "verdict_rules": [
