@@ -5640,7 +5640,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "pattern": "예비\\s*(?:후보|번호|순위)?\\s*[:：]?\\s*(\\d+)",
      "result": "waitlist",
      "capture": true
     },
@@ -5661,7 +5661,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격|합격\\s*을\\s*(?:진심으로\\s*)?축하",
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격(?!\\s*-->)|합격\\s*을\\s*(?:진심으로\\s*)?축하",
      "result": "pass",
      "capture": false
     },
