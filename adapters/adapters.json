@@ -16,8 +16,7 @@
   "신구대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.shingu.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "연성대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.yeonsung.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "명지전문대학": "합격자 조회 화면이 2단계 방식이라 자동 조회하지 않음 — 명지전문대 첫 화면의 '수시1차모집 합격자 발표'(pass1.mjc.ac.kr)에서 직접 확인",
-  "인하공업전문대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://result.inhatc.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
-  "백석예술대학교": "합격자 발표 화면이 접속대기(NetFUNNEL)와 팝업, 입력값 암호화 방식이라 자동 조회하지 않음 — bau.ac.kr 입시서비스 '합격자 발표'에서 직접 확인"
+  "인하공업전문대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://result.inhatc.ac.kr/Announcement/Announcement.asp 에서 직접 확인"
  },
  "adapters": {
   "afa": {
@@ -5863,6 +5862,68 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "bau": {
+   "univ_id": "bau",
+   "name": "백석예술대학교",
+   "aliases": [
+    "백석예대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://www.bau.ac.kr/sites/admission/service/subview_1.html",
+    "method": "POST",
+    "action_url": "https://www.bau.ac.kr/ipsi/admission/67/result.do",
+    "fields": {
+     "exam_no": "suhuNub2",
+     "name": "stntKnam",
+     "birth6": "stntBirth2"
+    },
+    "const_params": {
+     "siteId": "admission",
+     "fnctNo": "67",
+     "viewTab": "5",
+     "_b64": "suhuNub=suhuNub2,stntBirth=stntBirth2"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*합격자\\s*가?\\s*없",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아닙|조회\\s*기간이\\s*아닙",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위|합격)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "불합격|아쉽게도",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격|최초\\s*합격(?!자)|합격을\\s*축하|합격하셨|합격하였|합격\\s*입니다",
+     "result": "pass",
      "capture": false
     }
    ]
