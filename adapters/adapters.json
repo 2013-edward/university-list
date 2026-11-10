@@ -6988,9 +6988,10 @@
      "_browser": "1",
      "_b_fill": "#appl_no=exam_no,#jumin_no1=birth6",
      "_b_click": "button:has-text('로그인')",
-     "_b_done": "합격|불합격|예비|일치|없습니다|확인",
+     "_b_done": "합격여부|일치|없습니다|기간이\\s*아닙",
      "_b_wait_ms": "20000",
-     "_stage": "final"
+     "_stage": "final",
+     "_recheck_before": "2026-11-10 10:00"
     }
    },
    "verdict_rules": [
@@ -7013,6 +7014,27 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부[\\s\\S]{0,400}?불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부[\\s\\S]{0,400}?예비\\s*(?:후보|순위|번호)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부[\\s\\S]{0,400}?[\\s>]합격\\s*(?:<[^>]*>\\s*)*\\d{4}-\\d{2}-\\d{2}",
+     "result": "pass",
      "capture": false
     },
     {
