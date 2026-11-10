@@ -9173,7 +9173,7 @@
     "const_params": {
      "_browser": "1",
      "_b_referer": "https://www.shingu.ac.kr/",
-     "_b_fill": "#StudentName=name,#StudentBirthday=birth6,#StudentNumber=exam_no",
+     "_b_fill": "#SearchStudentform #StudentName=name,#SearchStudentform #StudentBirthday=birth6,#SearchStudentform #StudentNumber=exam_no",
      "_b_click": "#btnSearchStudent",
      "_b_done": "불합격|예비|합격(?!자\\s*조회)|검색된\\s*데이터가\\s*없|준비중",
      "_b_wait_ms": "20000",
