@@ -6880,9 +6880,10 @@
      "_browser": "1",
      "_b_fill": "#suheom_no=exam_no,#suheomsaeng_nm=name",
      "_b_click": "button:has-text('조회')",
-     "_b_done": "합격|불합격|예비|일치|없습니다|확인",
+     "_b_done": "합격|불합격|예비|후보|일치|없습니다|확인",
      "_b_wait_ms": "15000",
-     "_stage": "final"
+     "_stage": "final",
+     "_recheck_before": "2026-11-10 12:30"
     }
    },
    "verdict_rules": [
@@ -6906,6 +6907,13 @@
      "pattern": null,
      "result": "not_open",
      "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?:예비\\s*)?후보\\s*[-:：]?\\s*(\\d+)\\s*순위",
+     "result": "waitlist",
+     "capture": true
     },
     {
      "match": "regex",
