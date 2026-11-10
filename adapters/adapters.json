@@ -9194,7 +9194,9 @@
      "_b_wait_ms": "20000",
      "_stage": "final",
      "_b_js": "(function(){var d=false;setInterval(function(){if(d)return;var b=document.querySelectorAll('.btnAnnouncementStudent');if(b.length<2)return;var f=document.querySelector('#SearchStudentform #StudentNumber');var v=f?f.value.trim():'';for(var i=0;i<b.length;i++){if((b[i].getAttribute('StudentNumber')||'').trim()==v){d=true;b[i].click();return;}}},500);})();",
-     "_recheck_before": "2026-11-10 13:00"
+     "_recheck_before": "2026-11-10 13:30",
+     "_b_track_re": "모집전형\\s+([^\\n]+?)\\s*(?:\\n|지원학과|$)",
+     "_b_dept_re": "지원학과\\s+([^\\n]+?)\\s*(?:\\n|합격여부|$)"
     }
    },
    "verdict_rules": [
@@ -9282,7 +9284,9 @@
      "_b_wait_ms": "20000",
      "_stage": "final",
      "_b_js": "(function(){var d=false;setInterval(function(){if(d)return;var b=document.querySelectorAll('.btnAnnouncementStudent');if(b.length<2)return;var f=document.querySelector('#SearchStudentform #StudentNumber');var v=f?f.value.trim():'';for(var i=0;i<b.length;i++){if((b[i].getAttribute('StudentNumber')||'').trim()==v){d=true;b[i].click();return;}}},500);})();",
-     "_recheck_before": "2026-11-10 13:00"
+     "_recheck_before": "2026-11-10 13:30",
+     "_b_track_re": "모집전형\\s+([^\\n]+?)\\s*(?:\\n|지원학과|$)",
+     "_b_dept_re": "지원학과\\s+([^\\n]+?)\\s*(?:\\n|합격여부|$)"
     }
    },
    "verdict_rules": [
