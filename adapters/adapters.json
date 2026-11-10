@@ -13,7 +13,6 @@
   "청운대학교": "지원자 휴대폰 번호가 필요해 자동 조회하지 않음 — 수시모집 합격자 발표 화면(https://trs02.uwayapply.com/0383K6BK4D6G000000OOO3)에서 직접 확인",
   "한국예술종합학교": "합격여부 확인에 주민번호 뒤 4자리가 필요해 자동 조회하지 않음 — 한예종 입학정보 '합격여부확인'에서 직접 확인",
   "서울예술대학교": "합격 확인(수험생정보서비스)에 본인 휴대폰 번호가 필요해 자동 조회하지 않음 — sportal.seoularts.ac.kr 에서 직접 확인",
-  "신구대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.shingu.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "연성대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.yeonsung.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "명지전문대학": "합격자 조회 화면이 2단계 방식이라 자동 조회하지 않음 — 명지전문대 첫 화면의 '수시1차모집 합격자 발표'(pass1.mjc.ac.kr)에서 직접 확인",
   "인하공업전문대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://result.inhatc.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
@@ -9149,6 +9148,128 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "shingu": {
+   "univ_id": "shingu",
+   "name": "신구대학교",
+   "aliases": [
+    "신구대",
+    "신구대학"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://ref.shingu.ac.kr/Announcement/Announcement.asp",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StudentName",
+     "birth6": "StudentBirthday",
+     "exam_no": "StudentNumber"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_referer": "https://www.shingu.ac.kr/",
+     "_b_fill": "#StudentName=name,#StudentBirthday=birth6,#StudentNumber=exam_no",
+     "_b_click": "#btnSearchStudent",
+     "_b_done": "불합격|예비|합격(?!자\\s*조회)|검색된\\s*데이터가\\s*없|준비중",
+     "_b_wait_ms": "20000",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "검색된\\s*데이터가\\s*없",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격자\\s*조회를\\s*준비\\s*중",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
      "capture": false
     }
    ]
