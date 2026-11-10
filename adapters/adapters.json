@@ -34,7 +34,6 @@
   "우송정보대학": "합격자 조회에 휴대폰 번호가 필요해 자동 조회하지 않음 — https://ent.wsi.ac.kr '합격자 조회 및 고지서 출력'에서 직접 확인",
   "한국관광대학": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://announce.ktc.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
   "대림대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — https://ref.daelim.ac.kr/Announcement/Announcement.asp 에서 직접 확인",
-  "백제예술대학교": "합격자 조회 결과가 합격증(PDF) 출력 방식이라 자동 조회하지 않음 — 백제예대 입시홈페이지 '합격자발표'에서 직접 확인",
   "서정대학": "합격자 조회에 휴대폰 번호가 필요해 자동 조회하지 않음 — https://apply.seojeong.ac.kr/GateWeb/Apply/Login_Passed.aspx?UnivDiv=1 에서 직접 확인",
   "경민대학교": "합격자 조회 화면이 2단계(지원자 검색 후 선택) 방식이라 자동 조회하지 않음 — 경민대 입학홈페이지 공지 '수시1차 합격자 발표 안내'의 바로가기에서 직접 확인",
   "영남이공대학교": "합격자 확인에 휴대폰 번호와 주민번호 뒷자리가 필요해 자동 조회하지 않음 — https://exam.ync.ac.kr '합격자확인'에서 직접 확인",
@@ -8864,6 +8863,116 @@
      "match": "regex",
      "text": null,
      "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "paekche": {
+   "univ_id": "paekche",
+   "name": "백제예술대학교",
+   "aliases": [
+    "백제예술대",
+    "백제예대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://www.paekche.ac.kr/ict/ipsi_new/pms/ent02_real_2027_fix.html",
+    "method": "POST",
+    "action_url": "https://www.paekche.ac.kr/ict/ipsi_new/pms/ent02_out_real_n.html",
+    "fields": {
+     "exam_no": "jubs_bunh",
+     "name": "ipsi_name",
+     "birth6": "jumi_bunh"
+    },
+    "const_params": {
+     "mo_type": "1",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*하였음|합격하였기에|합격\\s*하였으므로|합격을\\s*증명",
      "result": "pass",
      "capture": false
     }
