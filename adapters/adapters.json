@@ -8116,7 +8116,8 @@
      "_b_click": "#mf_btnLogin",
      "_b_done": "합격|불합격|예비|후보|일치|없습니다|확인",
      "_b_wait_ms": "20000",
-     "_stage": "final"
+     "_stage": "final",
+     "_recheck_before": "2026-11-10 12:30"
     }
    },
    "verdict_rules": [
@@ -8140,6 +8141,13 @@
      "pattern": null,
      "result": "not_open",
      "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "후보\\s*자?\\s*[-:：]?\\s*(\\d+)\\s*(?:번|순위)",
+     "result": "waitlist",
+     "capture": true
     },
     {
      "match": "regex",
