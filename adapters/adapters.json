@@ -9371,6 +9371,1018 @@
      "capture": false
     }
    ]
+  },
+  "puts": {
+   "univ_id": "puts",
+   "name": "장로회신학대학교",
+   "aliases": [
+    "장로회신학대"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 성경고사성적우수자",
+     "_only": "성경고사",
+     "_stage": "final",
+     "_alt": "puts2,puts3,puts4,puts5,puts6,puts7,puts8,puts9,puts10"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts2": {
+   "univ_id": "puts2",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 학생부우수자",
+     "_only": "학생부우수",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts3": {
+   "univ_id": "puts3",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 드림(PUTS인재)",
+     "_only": "드림,PUTS",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts4": {
+   "univ_id": "puts4",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 대안학교",
+     "_only": "대안학교",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts5": {
+   "univ_id": "puts5",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 사회기여및배려자",
+     "_only": "사회기여,배려자",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts6": {
+   "univ_id": "puts6",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 농어촌학생",
+     "_only": "농어촌",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts7": {
+   "univ_id": "puts7",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 특수교육대상자",
+     "_only": "특수교육",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts8": {
+   "univ_id": "puts8",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 기회균형선발제",
+     "_only": "기회균형",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts9": {
+   "univ_id": "puts9",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 재외국민",
+     "_only": "재외국민,외국인,북한이탈",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "puts10": {
+   "univ_id": "puts10",
+   "name": "장로회신학대학교",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
+    "method": "POST",
+    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "fields": {
+     "exam_no": "ff_suheom",
+     "birth6": "ff_jumin_1"
+    },
+    "const_params": {
+     "ff_jeonhyeong": "수시 일반전형",
+     "_only": "일반",
+     "_stage": "final",
+     "_alt_of": "puts"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
