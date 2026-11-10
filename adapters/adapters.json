@@ -9278,16 +9278,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 성경고사성적우수자",
      "_only": "성경고사",
      "_stage": "final",
-     "_alt": "puts2,puts3,puts4,puts5,puts6,puts7,puts8,puts9,puts10"
+     "_alt": "puts2,puts3,puts4,puts5,puts6,puts7,puts8,puts9,puts10",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 성경고사성적우수자\"){e.value=\"수시 성경고사성적우수자\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -9379,16 +9384,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 학생부우수자",
      "_only": "학생부우수",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 학생부우수자\"){e.value=\"수시 학생부우수자\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -9480,16 +9490,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 드림(PUTS인재)",
      "_only": "드림,PUTS",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 드림(PUTS인재)\"){e.value=\"수시 드림(PUTS인재)\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -9581,16 +9596,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 대안학교",
      "_only": "대안학교",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 대안학교\"){e.value=\"수시 대안학교\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -9682,16 +9702,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 사회기여및배려자",
      "_only": "사회기여,배려자",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 사회기여및배려자\"){e.value=\"수시 사회기여및배려자\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -9783,16 +9808,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 농어촌학생",
      "_only": "농어촌",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 농어촌학생\"){e.value=\"수시 농어촌학생\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -9884,16 +9914,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 특수교육대상자",
      "_only": "특수교육",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 특수교육대상자\"){e.value=\"수시 특수교육대상자\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -9985,16 +10020,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 기회균형선발제",
      "_only": "기회균형",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 기회균형선발제\"){e.value=\"수시 기회균형선발제\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -10086,16 +10126,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 재외국민",
      "_only": "재외국민,외국인,북한이탈",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 재외국민\"){e.value=\"수시 재외국민\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
@@ -10187,16 +10232,21 @@
    "request": {
     "url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_login.ver2.asp",
     "method": "POST",
-    "action_url": "https://www.puts.ac.kr/ipsi/db/js_pass_db_susi/pass_result.ver2.asp",
+    "action_url": null,
     "fields": {
      "exam_no": "ff_suheom",
      "birth6": "ff_jumin_1"
     },
     "const_params": {
-     "ff_jeonhyeong": "수시 일반전형",
      "_only": "일반",
      "_stage": "final",
-     "_alt_of": "puts"
+     "_alt_of": "puts",
+     "_browser": "1",
+     "_b_js": "(function(){function s(){var e=document.querySelector('select[name=ff_jeonhyeong]');if(e&&e.value!==\"수시 일반전형\"){e.value=\"수시 일반전형\";}}document.addEventListener('DOMContentLoaded',s);setInterval(s,300);})();",
+     "_b_fill": "[name=ff_suheom]=exam_no,[name=ff_jumin_1]=birth6",
+     "_b_click": "form[name=form1] a.btnType",
+     "_b_done": "합격|불합격|예비|일치|없습니다|확인|조회된",
+     "_b_wait_ms": "20000"
     }
    },
    "verdict_rules": [
