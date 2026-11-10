@@ -8730,6 +8730,107 @@
      "capture": false
     }
    ]
+  },
+  "kica": {
+   "univ_id": "kica",
+   "name": "국제예술대학교",
+   "aliases": [
+    "국제예술대",
+    "국제예술대학"
+   ],
+   "engine": "http",
+   "encoding": "euc-kr",
+   "request": {
+    "url": "https://www.haksa.kica.ac.kr/ask_entrance.asp",
+    "method": "POST",
+    "action_url": "https://www.haksa.kica.ac.kr/ask_entranceW.asp",
+    "fields": {
+     "name": "name",
+     "exam_no": "exam_no"
+    },
+    "const_params": {
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
