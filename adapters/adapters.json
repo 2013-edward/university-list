@@ -7311,7 +7311,8 @@
      "_b_click": "form[action*='srchPasser'] input[type=submit]",
      "_b_done": "명단에\\s*없|합격|불합격|예비|기간이\\s*아닙",
      "_b_wait_ms": "15000",
-     "_stage": "final"
+     "_stage": "final",
+     "_recheck_before": "2026-11-10 10:15"
     }
    },
    "verdict_rules": [
@@ -7348,6 +7349,20 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*[-–:]?\\s*(\\d+)\\s*순위",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격자\\s*명단에\\s*없",
+     "result": "fail",
      "capture": false
     },
     {
