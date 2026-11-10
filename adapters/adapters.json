@@ -9190,9 +9190,11 @@
      "_b_referer": "https://www.shingu.ac.kr/",
      "_b_fill": "#SearchStudentform #StudentName=name,#SearchStudentform #StudentBirthday=birth6,#SearchStudentform #StudentNumber=exam_no",
      "_b_click": "#btnSearchStudent",
-     "_b_done": "불합격|예비|합격(?!자\\s*조회)|검색된\\s*데이터가\\s*없|준비중",
+     "_b_done": "합격\\s*여부|예비번호를|불합격으로|합격을|검색된\\s*데이터가\\s*없|준비중",
      "_b_wait_ms": "20000",
-     "_stage": "final"
+     "_stage": "final",
+     "_b_js": "(function(){var d=false;setInterval(function(){if(d)return;var b=document.querySelectorAll('.btnAnnouncementStudent');if(b.length<2)return;var f=document.querySelector('#SearchStudentform #StudentNumber');var v=f?f.value.trim():'';for(var i=0;i<b.length;i++){if((b[i].getAttribute('StudentNumber')||'').trim()==v){d=true;b[i].click();return;}}},500);})();",
+     "_recheck_before": "2026-11-10 13:00"
     }
    },
    "verdict_rules": [
@@ -9213,77 +9215,42 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표 기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*불합격",
+     "result": "fail",
      "capture": false
     },
     {
      "match": "regex",
      "text": null,
-     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:예비|후보)\\s*(?:순위|번호)?\\s*[-:：]?\\s*(\\d+)",
      "result": "waitlist",
      "capture": true
     },
     {
-     "match": "contains",
-     "text": "불합격",
-     "pattern": null,
-     "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "아쉽게도",
-     "pattern": null,
-     "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "축하",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격하셨습니다",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격하였습니다",
-     "pattern": null,
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:최초\\s*)?합격",
      "result": "pass",
      "capture": false
     },
     {
      "match": "regex",
      "text": null,
-     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
-     "result": "pass",
+     "pattern": "불합격으로\\s*처리",
+     "result": "fail",
      "capture": false
     },
     {
      "match": "regex",
      "text": null,
-     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "pattern": "예비번호를\\s*받았",
+     "result": "waitlist",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격을\\s*(?:진심으로\\s*)?축하|합격하셨습니다|합격하였습니다",
      "result": "pass",
      "capture": false
     }
@@ -9311,9 +9278,11 @@
      "_browser": "1",
      "_b_fill": "#SearchStudentform #StudentName=name,#SearchStudentform #StudentBirthday=birth6,#SearchStudentform #StudentNumber=exam_no",
      "_b_click": "#btnSearchStudent",
-     "_b_done": "불합격|예비|합격(?!자\\s*조회)|검색된\\s*데이터가\\s*없|준비중",
+     "_b_done": "합격\\s*여부|예비번호를|불합격으로|합격을|검색된\\s*데이터가\\s*없|준비중",
      "_b_wait_ms": "20000",
-     "_stage": "final"
+     "_stage": "final",
+     "_b_js": "(function(){var d=false;setInterval(function(){if(d)return;var b=document.querySelectorAll('.btnAnnouncementStudent');if(b.length<2)return;var f=document.querySelector('#SearchStudentform #StudentNumber');var v=f?f.value.trim():'';for(var i=0;i<b.length;i++){if((b[i].getAttribute('StudentNumber')||'').trim()==v){d=true;b[i].click();return;}}},500);})();",
+     "_recheck_before": "2026-11-10 13:00"
     }
    },
    "verdict_rules": [
@@ -9334,77 +9303,42 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "일치하(는|지)|조회(된|할)\\s*(자료|정보|내역|결과)가?\\s*없|없는\\s*수험번호",
-     "result": "no_match",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표 기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "발표기간이 아닙니다",
-     "pattern": null,
-     "result": "not_open",
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*불합격",
+     "result": "fail",
      "capture": false
     },
     {
      "match": "regex",
      "text": null,
-     "pattern": "예비\\s*(?:합격|번호|순위)?\\s*[:：]?\\s*(\\d+)\\s*번?",
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:예비|후보)\\s*(?:순위|번호)?\\s*[-:：]?\\s*(\\d+)",
      "result": "waitlist",
      "capture": true
     },
     {
-     "match": "contains",
-     "text": "불합격",
-     "pattern": null,
-     "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "아쉽게도",
-     "pattern": null,
-     "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "축하",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격하셨습니다",
-     "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "contains",
-     "text": "합격하였습니다",
-     "pattern": null,
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:최초\\s*)?합격",
      "result": "pass",
      "capture": false
     },
     {
      "match": "regex",
      "text": null,
-     "pattern": "(최초\\s*)?합격\\s*입니다|결과\\s*[:：]?\\s*합격",
-     "result": "pass",
+     "pattern": "불합격으로\\s*처리",
+     "result": "fail",
      "capture": false
     },
     {
      "match": "regex",
      "text": null,
-     "pattern": "(?<!예비)(?<!불)합격\\s*(?:대상자|자)\\s*입니다",
+     "pattern": "예비번호를\\s*받았",
+     "result": "waitlist",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격을\\s*(?:진심으로\\s*)?축하|합격하셨습니다|합격하였습니다",
      "result": "pass",
      "capture": false
     }
