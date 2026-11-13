@@ -10658,14 +10658,15 @@
     },
     "const_params": {
      "_browser": "1",
-     "_b_js": "(function(){var n=0;function go(){try{var y=document.getElementById('pYear');if(y&&!y.value){y.value='2027';}if(/mainPage\\.do/.test(location.pathname)){var f=window.frames['contents'];if(f&&!/P0009/.test(String(f.location.href))&&n<15){n++;f.location.href='findContents.do?pid=P0009';}}}catch(e){}}setInterval(go,700);})();",
+     "_b_js": "(function(){var t=0;function go(){try{var y=document.getElementById('pYear');if(y&&!y.value){y.value='2027';}if(/mainPage\\.do/.test(location.pathname)&&!t){t=1;setTimeout(function(){location.href='findContents.do?pid=P0009';},1500);}}catch(e){}}setInterval(go,500);})();",
      "_b_fill": "#pUserId=exam_no,#pPassword=birth6",
      "_b_click": "a#btnLogin",
-     "_b_done": "불합격|합격을|축하|예비|합격사항|합격\\s*여부\\s*[:：]|발표\\s*기간|조회\\s*기간|비밀번호가|일치하지|1단계|면접\\s*대상",
+     "_b_done": "합격\\s*여부\\s|발표내용이\\s*없|비밀번호가|일치하지|아이디",
      "_b_wait_ms": "25000",
      "_stage": "1",
-     "_b_track_re": "지원전형\\s*[:：]\\s*([^\\n■]+?)\\s*(?:\\n|■|$)",
-     "_b_dept_re": "모집단위\\s*[:：]\\s*([^\\n■]+?)\\s*(?:\\n|■|$)"
+     "_b_track_re": "지원전형\\s*[:：]?\\s*([^\\n■]+?)\\s*(?:\\n|■|지원사항|$)",
+     "_b_dept_re": "지원사항\\s+(?:서울|ERICA)?\\s*(?:[가-힣]+대학\\s+)?([^\\n]+?)\\s*(?:\\n|합격\\s*여부|$)",
+     "_recheck_before": "2026-11-13 11:40"
     }
    },
    "verdict_rules": [
@@ -10679,8 +10680,29 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "발표\\s*기간이\\s*아|조회\\s*기간이\\s*아|발표\\s*전입니다",
+     "pattern": "합격자\\s*발표\\s*내용이\\s*없",
      "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*합격\\s*순위\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*|최초\\s*)?합격|1단계에\\s*합격|합격을\\s*(?:진심으로\\s*)?축하",
+     "result": "pass",
      "capture": false
     },
     {
@@ -10688,20 +10710,6 @@
      "text": null,
      "pattern": "불합격",
      "result": "fail",
-     "capture": false
-    },
-    {
-     "match": "regex",
-     "text": null,
-     "pattern": "예비\\s*(?:번호|순위|후보)?\\s*[:：]?\\s*(\\d+)",
-     "result": "waitlist",
-     "capture": true
-    },
-    {
-     "match": "regex",
-     "text": null,
-     "pattern": "합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였|최초\\s*합격|1단계\\s*합격|서류\\s*(?:평가\\s*)?합격|면접\\s*대상자|합격\\s*(?:사항|여부)\\s*[:：]?\\s*합격",
-     "result": "pass",
      "capture": false
     }
    ]
