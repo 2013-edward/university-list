@@ -10640,11 +10640,86 @@
    "univ_id": "hanyang",
    "name": "한양대학교",
    "aliases": [
-    "한양대",
-    "한양대학교ERICA캠퍼스",
-    "한양대ERICA",
+    "한양대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://portal.hanyang.ac.kr/ipsi/findLoginPage.do",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "exam_no": "pUserId",
+     "birth6": "pPassword"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_js": "(function(){var n=0;function go(){try{var y=document.getElementById('pYear');if(y&&!y.value){y.value='2027';}if(/mainPage\\.do/.test(location.pathname)){var f=window.frames['contents'];if(f&&!/P0009/.test(String(f.location.href))&&n<15){n++;f.location.href='findContents.do?pid=P0009';}}}catch(e){}}setInterval(go,700);})();",
+     "_b_fill": "#pUserId=exam_no,#pPassword=birth6",
+     "_b_click": "a#btnLogin",
+     "_b_done": "합격\\s*여부\\s|발표내용이\\s*없|비밀번호가|일치하지|아이디",
+     "_b_wait_ms": "25000",
+     "_stage": "1",
+     "_b_track_re": "지원전형\\s*[:：]?\\s*([^\\n■]+?)\\s*(?:\\n|■|지원사항|$)",
+     "_b_dept_re": "지원사항\\s+(?:서울|ERICA)?\\s*(?:[가-힣]+대학\\s+)?([^\\n]+?)\\s*(?:\\n|합격\\s*여부|$)",
+     "_recheck_before": "2026-11-13 12:30"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "비밀번호가\\s*(?:일치하지|틀)|아이디\\s*또는\\s*비밀번호|로그인\\s*정보가|모집연도\\s*숫자\\s*네자리",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격자\\s*발표\\s*내용이\\s*없",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*합격\\s*순위\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*|최초\\s*)?합격|1단계에\\s*합격|합격을\\s*(?:진심으로\\s*)?축하",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "불합격",
+     "result": "fail",
+     "capture": false
+    }
+   ]
+  },
+  "hanyang_erica": {
+   "univ_id": "hanyang_erica",
+   "name": "한양대학교ERICA캠퍼스",
+   "aliases": [
     "한양대학교(ERICA)",
-    "한양대학교 ERICA"
+    "한양대ERICA",
+    "한양대학교 ERICA",
+    "한양대학교에리카",
+    "한양대에리카",
+    "한양대학교(에리카)"
    ],
    "engine": "http",
    "encoding": "utf-8",
