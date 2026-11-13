@@ -10658,7 +10658,7 @@
     },
     "const_params": {
      "_browser": "1",
-     "_b_js": "(function(){var t=0;function go(){try{var y=document.getElementById('pYear');if(y&&!y.value){y.value='2027';}if(/mainPage\\.do/.test(location.pathname)&&!t){t=1;setTimeout(function(){location.href='findContents.do?pid=P0009';},1500);}}catch(e){}}setInterval(go,500);})();",
+     "_b_js": "(function(){var n=0;function go(){try{var y=document.getElementById('pYear');if(y&&!y.value){y.value='2027';}if(/mainPage\\.do/.test(location.pathname)){var f=window.frames['contents'];if(f&&!/P0009/.test(String(f.location.href))&&n<15){n++;f.location.href='findContents.do?pid=P0009';}}}catch(e){}}setInterval(go,700);})();",
      "_b_fill": "#pUserId=exam_no,#pPassword=birth6",
      "_b_click": "a#btnLogin",
      "_b_done": "합격\\s*여부\\s|발표내용이\\s*없|비밀번호가|일치하지|아이디",
@@ -10666,7 +10666,7 @@
      "_stage": "1",
      "_b_track_re": "지원전형\\s*[:：]?\\s*([^\\n■]+?)\\s*(?:\\n|■|지원사항|$)",
      "_b_dept_re": "지원사항\\s+(?:서울|ERICA)?\\s*(?:[가-힣]+대학\\s+)?([^\\n]+?)\\s*(?:\\n|합격\\s*여부|$)",
-     "_recheck_before": "2026-11-13 11:40"
+     "_recheck_before": "2026-11-13 12:30"
     }
    },
    "verdict_rules": [
