@@ -11084,13 +11084,14 @@
     },
     "const_params": {
      "_browser": "1",
-     "_b_js": "(function(){function go(){try{if(document.getElementById('passwd'))return;var k='_hgk_clicked';if(sessionStorage.getItem(k))return;var as=document.querySelectorAll('a,button,li,span');for(var i=0;i<as.length;i++){var t=(as[i].textContent||'').replace(/\\s+/g,'');if(t.length<15&&/합격자조회|합격조회|합격여부/.test(t)){sessionStorage.setItem(k,'1');as[i].click();return;}}}catch(e){}}setInterval(go,800);})();",
+     "_b_js": "(function(){function go(){try{if(document.getElementById('passwd'))return;var k='_hgk_clicked';if(sessionStorage.getItem(k))return;var as=document.querySelectorAll('a,button,li,span,td');for(var i=0;i<as.length;i++){var t=(as[i].textContent||'').replace(/\\s+/g,'');if(t.length<25&&/최초합격자발표|합격자조회|합격조회/.test(t)&&!/충원/.test(t)){sessionStorage.setItem(k,'1');var a=as[i].querySelector('a')||as[i];a.click();return;}}}catch(e){}}setInterval(go,800);})();",
      "_b_fill": "#hname=name,#suheom_no=exam_no,#passwd=birth6",
      "_b_click": "input[type=image]",
      "_b_done": "불합격|합격을|축하|예비|합격\\s*여부\\s|비밀번호가|일치하지|발표\\s*기간",
      "_b_wait_ms": "25000",
      "_stage": "final",
-     "_except": "한의예,농어촌,기초생활,차상위,한부모"
+     "_except": "한의예,농어촌,기초생활,차상위,한부모",
+     "_recheck_before": "2026-11-15 12:20"
     }
    },
    "verdict_rules": [
