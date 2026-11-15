@@ -35,7 +35,8 @@
   "정화예술대학": "합격자 조회에 휴대폰 번호가 필요해 자동 조회하지 않음 — https://ipsi.jb.ac.kr/?m1=page&menu_id=157 에서 직접 확인",
   "한국교통대학교": "합격자 조회가 수험번호+비밀번호(문자 인증) 로그인이라 자동 조회하지 않음 — https://ipsi.ut.ac.kr 에서 직접 확인",
   "KAIST": "합격자 조회가 이메일/수험번호+비밀번호 로그인이라 자동 조회하지 않음 — Early Admission(창의도전·학교장추천) 최종 발표 중: https://univapply.kaist.ac.kr/univ_result/",
-  "계명대학교": "통합지원서비스(넥사크로 화면) 로그인 방식이라 자동 조회하지 않음 — https://ibsi.kmu.ac.kr/nx/ 에서 수험번호 + 비밀번호(초기: 생년월일 6자리)로 로그인해 '합격자확인및문서등록' 또는 '1단계통과자발표'에서 직접 확인"
+  "계명대학교": "통합지원서비스(넥사크로 화면) 로그인 방식이라 자동 조회하지 않음 — https://ibsi.kmu.ac.kr/nx/ 에서 수험번호 + 비밀번호(초기: 생년월일 6자리)로 로그인해 '합격자확인및문서등록' 또는 '1단계통과자발표'에서 직접 확인",
+  "서울교육대학교": "합격자 조회가 입학정보시스템 로그인(비밀번호를 문자로 받아 설정) 방식이라 자동 조회하지 않음 — https://snue.koedu.ac.kr/PASS_INFO/index 에서 직접 확인"
  },
  "adapters": {
   "afa": {
@@ -2128,7 +2129,7 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://trs03.uwayapply.com/0389K6BK7L3K000000KC54/login",
+    "url": "https://trs03.uwayapply.com/038BK6BK7L3G0000005T7B/login",
     "method": "POST",
     "action_url": null,
     "fields": {
@@ -2137,8 +2138,9 @@
      "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "_only": "창의인재,충남형",
-     "_stage": "1"
+     "_only": "종합,창의인재,충남형",
+     "_stage": "final",
+     "_recheck_before": "2026-11-15 13:30"
     }
    },
    "verdict_rules": [
@@ -11233,6 +11235,237 @@
      "text": "발표기간이 아닙니다",
      "pattern": null,
      "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "dnue": {
+   "univ_id": "dnue",
+   "name": "대구교육대학교",
+   "aliases": [
+    "대구교대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://trs03.uwayapply.com/052LJOBV2571LO8000UIT2/login",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
+    },
+    "const_params": {
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "cue": {
+   "univ_id": "cue",
+   "name": "진주교육대학교",
+   "aliases": [
+    "진주교대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://cue.koedu.ac.kr/PASS_INFO",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "exam_no": "apctNo",
+     "name": "stdNm",
+     "birth8": "bthDt"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_js": "(function(){function go(){try{if(document.getElementById('apctNo'))return;var k='_hgk_clicked';if(sessionStorage.getItem(k))return;var as=document.querySelectorAll('a,button,li');for(var i=0;i<as.length;i++){var t=(as[i].textContent||'').replace(/\\s+/g,'');if(t.length<25&&/합격자조회|합격자발표|합격조회|합격여부/.test(t)){sessionStorage.setItem(k,'1');as[i].click();return;}}}catch(e){}}setInterval(go,800);})();",
+     "_b_fill": "#apctNo=exam_no,#stdNm=name,#bthDt=birth8",
+     "_b_click": "button:has-text('LOGIN')",
+     "_b_done": "불합격|합격|예비|일치|없습니다|기간이",
+     "_b_wait_ms": "25000",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*(?:정보|자료|지원자)가?\\s*없|정보가\\s*일치하지|조회된\\s*(?:정보|자료)가\\s*없",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아|조회\\s*기간이\\s*아",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격)?\\s*(?:번호|순위|후보)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?합격|1단계\\s*합격|면접\\s*대상|합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "불합격",
+     "result": "fail",
+     "capture": false
+    }
+   ]
+  },
+  "jnue": {
+   "univ_id": "jnue",
+   "name": "전주교육대학교",
+   "aliases": [
+    "전주교대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://jnue.koedu.ac.kr/PASS_INFO",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "exam_no": "apctNo",
+     "name": "stdNm",
+     "birth8": "bthDt"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_js": "(function(){function go(){try{if(document.getElementById('apctNo'))return;var k='_hgk_clicked';if(sessionStorage.getItem(k))return;var as=document.querySelectorAll('a,button,li');for(var i=0;i<as.length;i++){var t=(as[i].textContent||'').replace(/\\s+/g,'');if(t.length<25&&/합격자조회|합격자발표|합격조회|합격여부/.test(t)){sessionStorage.setItem(k,'1');as[i].click();return;}}}catch(e){}}setInterval(go,800);})();",
+     "_b_fill": "#apctNo=exam_no,#stdNm=name,#bthDt=birth8",
+     "_b_click": "button:has-text('LOGIN')",
+     "_b_done": "불합격|합격|예비|일치|없습니다|기간이",
+     "_b_wait_ms": "25000",
+     "_stage": "1"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*(?:정보|자료|지원자)가?\\s*없|정보가\\s*일치하지|조회된\\s*(?:정보|자료)가\\s*없",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아|조회\\s*기간이\\s*아",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격)?\\s*(?:번호|순위|후보)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?합격|1단계\\s*합격|면접\\s*대상|합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "불합격",
+     "result": "fail",
      "capture": false
     }
    ]
