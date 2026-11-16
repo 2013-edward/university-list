@@ -3145,7 +3145,8 @@
     "const_params": {
      "_only": "국제인재,기회균형,체육인재",
      "_stage": "1",
-     "_recheck_before": "2026-10-29 08:00"
+     "_recheck_before": "2026-10-29 08:00",
+     "_alt": "yonsei3"
     }
    },
    "verdict_rules": [
@@ -11474,6 +11475,114 @@
      "text": null,
      "pattern": "불합격",
      "result": "fail",
+     "capture": false
+    }
+   ]
+  },
+  "yonsei3": {
+   "univ_id": "yonsei3",
+   "name": "연세대학교(서울)",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_1st_CB_K/pass.asp",
+    "method": "POST",
+    "action_url": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_1st_CB_K/pass_ok.asp",
+    "fields": {
+     "name": "Name",
+     "exam_no": "Suhumno",
+     "birth6": "Birthdate"
+    },
+    "const_params": {
+     "_only": "활동우수",
+     "_stage": "1",
+     "_alt_of": "yonsei"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "검색된 내용이 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "선발되지|대상자?가\\s*아닙",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "대상자\\s*로\\s*선발되|면접\\s*대상(?:자)?\\s*(?:입니다|이십니다|로\\s*선정|으로\\s*선정|에\\s*해당)",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하합니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없습니다",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "조회기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
      "capture": false
     }
    ]
