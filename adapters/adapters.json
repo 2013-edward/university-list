@@ -12319,6 +12319,77 @@
      "capture": false
     }
    ]
+  },
+  "dyu": {
+   "univ_id": "dyu",
+   "name": "동양대학교",
+   "aliases": [
+    "동양대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://haksa.dyu.ac.kr/manager/m_ibsi/ib_portal/ib_portal_index.jsp?nyeondo=2027",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "ireum",
+     "exam_no": "jeobsu_no"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_js": "(function(){function go(){try{if(document.getElementById('id_jeobsu_no'))return;var k='_hgk_clicked';if(sessionStorage.getItem(k))return;var as=document.querySelectorAll('a,button,li');for(var i=0;i<as.length;i++){var t=(as[i].textContent||'').replace(/\\s+/g,'');if(t.length<20&&/합격자조회|합격자발표|합격조회|합격여부/.test(t)&&!/충원/.test(t)){sessionStorage.setItem(k,'1');as[i].click();return;}}}catch(e){}}setInterval(go,800);})();",
+     "_b_fill": "#id_ireum=name,#id_jeobsu_no=exam_no",
+     "_b_click": "a[onclick*='jeobsu_ckForm']",
+     "_b_done": "불합격|합격을|합격하|축하|예비|합격\\s*여부\\s|일치|없습니다|기간이",
+     "_b_wait_ms": "25000",
+     "_stage": "final"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*(?:정보|자료|지원자)가?\\s*없|정보가\\s*일치하지|조회된\\s*(?:정보|자료)가\\s*없|존재하지\\s*않",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아|조회\\s*기간이\\s*아",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:합격)?\\s*(?:번호|순위|후보)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:최초\\s*)?합격|합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였|합격\\s*확인서",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "불합격",
+     "result": "fail",
+     "capture": false
+    }
+   ]
   }
  }
 }
