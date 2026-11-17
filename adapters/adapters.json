@@ -1075,7 +1075,7 @@
     "const_params": {
      "_only": "면접형",
      "_stage": "1",
-     "_recheck_before": "2026-11-17 15:50"
+     "_recheck_before": "2026-11-17 16:00"
     }
    },
    "verdict_rules": [
@@ -1103,7 +1103,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "1\\s*단계\\s*(?:전형\\s*)?합격|면접\\s*(?:고사\\s*)?대상자(?:입니다|로)",
+     "pattern": "1\\s*단계\\s*(?:전형\\s*)?합격(?!자)|면접\\s*(?:고사\\s*)?대상자(?:입니다|로)",
      "result": "pass",
      "capture": false
     },
@@ -1179,7 +1179,7 @@
      "_only": "인하미래,지역의사",
      "_stage": "1",
      "_alt": "inha2",
-     "_recheck_before": "2026-11-17 15:50"
+     "_recheck_before": "2026-11-17 16:00"
     }
    },
    "verdict_rules": [
@@ -1207,7 +1207,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "1\\s*단계\\s*(?:전형\\s*)?합격|면접\\s*(?:평가\\s*)?대상",
+     "pattern": "1\\s*단계\\s*(?:전형\\s*)?합격(?!자)|면접\\s*(?:평가\\s*)?대상(?!자\\s*(?:발표|조회|및|고사장))",
      "result": "pass",
      "capture": false
     },
@@ -11370,7 +11370,8 @@
      "_b_click": "button:has-text('LOGIN')",
      "_b_done": "불합격|합격|예비|일치|없습니다|기간이",
      "_b_wait_ms": "25000",
-     "_stage": "1"
+     "_stage": "1",
+     "_recheck_before": "2026-11-17 16:00"
     }
    },
    "verdict_rules": [
@@ -11405,7 +11406,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?합격|1단계\\s*합격|면접\\s*대상|합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였",
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?합격|1단계\\s*합격(?!자)|면접\\s*대상(?!자\\s*(?:발표|조회|및|고사장))|합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였",
      "result": "pass",
      "capture": false
     },
@@ -11442,7 +11443,8 @@
      "_b_click": "button:has-text('LOGIN')",
      "_b_done": "불합격|합격|예비|일치|없습니다|기간이",
      "_b_wait_ms": "25000",
-     "_stage": "1"
+     "_stage": "1",
+     "_recheck_before": "2026-11-17 16:00"
     }
    },
    "verdict_rules": [
@@ -11477,7 +11479,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?합격|1단계\\s*합격|면접\\s*대상|합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였",
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*(?:1\\s*단계\\s*)?합격|1단계\\s*합격(?!자)|면접\\s*대상(?!자\\s*(?:발표|조회|및|고사장))|합격을\\s*(?:진심으로\\s*)?축하|합격하셨|합격하였",
      "result": "pass",
      "capture": false
     },
@@ -12073,10 +12075,25 @@
      "_b_done": "불합격|합격|예비|일치|없습니다|기간이",
      "_b_wait_ms": "20000",
      "_stage": "1",
-     "_except": "고교추천,논술,실기,교과"
+     "_except": "고교추천,논술,실기,교과",
+     "_recheck_before": "2026-11-17 16:00"
     }
    },
    "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "전형\\s*결과\\s*[:：]?\\s*(?:1\\s*단계\\s*)?불합격|합격자\\s*명단에\\s*없",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "전형\\s*결과\\s*[:：]?\\s*(?:1\\s*단계\\s*)?합격",
+     "result": "pass",
+     "capture": false
+    },
     {
      "match": "regex",
      "text": null,
@@ -12094,7 +12111,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "1\\s*단계\\s*(?:전형\\s*)?합격|면접\\s*대상",
+     "pattern": "1\\s*단계\\s*(?:전형\\s*)?합격(?!자)|면접\\s*대상(?!자\\s*(?:발표|조회|및|고사장))",
      "result": "pass",
      "capture": false
     },
