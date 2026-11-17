@@ -4098,9 +4098,9 @@
    "engine": "http",
    "encoding": "utf-8",
    "request": {
-    "url": "https://r4-pass02.mncapro.com/nsu/pass/pass.php?CODE=RnF3ekw4SVVnekR2QXR2dXdlZG5kVGtZR1B4ZGNnL1hpc2ExWDZoUEN1bz0=",
+    "url": "https://r4-pass04.mncapro.com/nsu_v8/pass/pass.php?CODE=QmN6YWtqU0YvdTBobGhMamE3c21xTVZyeml5RitRV1BESmVyR1JLa0dOQT0=",
     "method": "POST",
-    "action_url": "https://r4-pass02.mncapro.com/nsu/pass/result.php",
+    "action_url": "https://r4-pass04.mncapro.com/nsu_v8/pass/result.php",
     "fields": {
      "name": "USER_NM1",
      "exam_no": "EXAM_NO_T",
@@ -4110,12 +4110,12 @@
      "ipsiyear": "2027",
      "apply_cd": "02",
      "apply_gr": "1",
-     "service_cd": "examroom6",
+     "service_cd": "susiDoc",
      "chasu": "0",
-     "service_gb": "1",
+     "service_gb": "2",
      "_pre_posts": "student_list.php,resultConfig.php",
-     "_only": "면접형,학생부종합",
-     "_stage": "1"
+     "_stage": "final",
+     "_recheck_before": "2026-11-17 11:30"
     }
    },
    "verdict_rules": [
@@ -4136,7 +4136,7 @@
     {
      "match": "regex",
      "text": null,
-     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "pattern": "예비\\s*(?:후보|번호|순위)?\\s*[:：]?\\s*(\\d+)",
      "result": "waitlist",
      "capture": true
     },
@@ -4152,6 +4152,13 @@
      "text": "아쉽게도",
      "pattern": null,
      "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*[:：]?\\s*합격(?!\\s*-->)|합격\\s*을\\s*(?:진심으로\\s*)?축하",
+     "result": "pass",
      "capture": false
     },
     {
@@ -4179,13 +4186,6 @@
      "match": "contains",
      "text": "합격입니다",
      "pattern": null,
-     "result": "pass",
-     "capture": false
-    },
-    {
-     "match": "regex",
-     "text": null,
-     "pattern": "면접\\s*(대상|일시|고사장|장소)",
      "result": "pass",
      "capture": false
     },
