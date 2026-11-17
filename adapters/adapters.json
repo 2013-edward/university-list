@@ -12338,12 +12338,13 @@
     },
     "const_params": {
      "_browser": "1",
-     "_b_js": "(function(){function go(){try{if(document.getElementById('id_jeobsu_no'))return;var k='_hgk_clicked';if(sessionStorage.getItem(k))return;var as=document.querySelectorAll('a,button,li');for(var i=0;i<as.length;i++){var t=(as[i].textContent||'').replace(/\\s+/g,'');if(t.length<20&&/합격자조회|합격자발표|합격조회|합격여부/.test(t)&&!/충원/.test(t)){sessionStorage.setItem(k,'1');as[i].click();return;}}}catch(e){}}setInterval(go,800);})();",
+     "_b_js": "(function(){function vis(e){return !!(e&&e.offsetParent);}function go(){try{var no=document.getElementById('id_jeobsu_no');if(no){if(sessionStorage.getItem('_hgk_sel'))return;var v=(no.value||'').trim();var bs=document.querySelectorAll('a,button,input[type=button],span');for(var i=0;i<bs.length;i++){var b=bs[i];var t=(b.textContent||b.value||'').replace(/\\s+/g,'');if(t==='선택'&&vis(b)){var tr=b.closest('tr');if(!v||!tr||tr.textContent.indexOf(v)>=0){sessionStorage.setItem('_hgk_sel','1');b.click();return;}}}return;}if(sessionStorage.getItem('_hgk_clicked'))return;var as=document.querySelectorAll('a,button,li');for(var j=0;j<as.length;j++){var t2=(as[j].textContent||'').replace(/\\s+/g,'');if(t2.length<20&&/합격자조회|합격자발표|합격조회|합격여부|합격확인/.test(t2)&&!/충원/.test(t2)){sessionStorage.setItem('_hgk_clicked','1');as[j].click();return;}}}catch(e){}}setInterval(go,700);})();",
      "_b_fill": "#id_ireum=name,#id_jeobsu_no=exam_no",
      "_b_click": "a[onclick*='jeobsu_ckForm']",
      "_b_done": "불합격|합격을|합격하|축하|예비|합격\\s*여부\\s|일치|없습니다|기간이",
      "_b_wait_ms": "25000",
-     "_stage": "final"
+     "_stage": "final",
+     "_recheck_before": "2026-11-18 07:30"
     }
    },
    "verdict_rules": [
