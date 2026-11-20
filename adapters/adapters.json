@@ -12412,6 +12412,64 @@
      "capture": false
     }
    ]
+  },
+  "snu": {
+   "univ_id": "snu",
+   "name": "서울대학교",
+   "aliases": [
+    "서울대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://snuipsi.snu.ac.kr/world/admission/announce/login.action?examBussFg=U020100023&examYy=2027&locale=",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "userNm",
+     "birth6": "birthDt",
+     "exam_no": "recvNo"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_fill": "[name=userNm]=name,[name=birthDt]=birth6,[name=recvNo]=exam_no",
+     "_b_click": "a.search",
+     "_b_done": "불합격|합격(?!자\\s*발표|자\\s*조회)|일치|없습니다|확인하여|기간이",
+     "_b_wait_ms": "20000",
+     "_stage": "1",
+     "_only": "일반,기회균형"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "일치하는\\s*(?:정보|자료|지원자)가?\\s*없|정보가\\s*일치하지|조회된\\s*(?:정보|자료|데이터)가\\s*없|확인하여\\s*주십시오|존재하지\\s*않",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "발표\\s*기간이\\s*아|조회\\s*기간이\\s*아",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "1\\s*단계\\s*(?:전형\\s*)?불합격|합격자\\s*명단에\\s*없|불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "1\\s*단계\\s*(?:전형\\s*)?합격(?!자)|합격하였|합격하셨|합격을\\s*(?:진심으로\\s*)?축하|2단계\\s*(?:전형|면접)",
+     "result": "pass",
+     "capture": false
+    }
+   ]
   }
  }
 }
