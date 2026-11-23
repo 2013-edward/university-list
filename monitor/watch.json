@@ -6,10 +6,10 @@
   "건양대학교": "https://ipsi.konyang.ac.kr/",
   "경기대학교": "https://enter.kyonggi.ac.kr/",
   "경남대학교": "https://ipsi.kyungnam.ac.kr/",
-  "경북대학교": "https://ipsi.knu.ac.kr/",
+  "경북대학교": "https://ipsi1.knu.ac.kr/intro/",
   "경상국립대학교": "https://www.gnu.ac.kr/intro/www/susi/index.html",
   "경희대학교": "https://iphak.khu.ac.kr/",
-  "고려대학교(서울)": "https://oku.korea.ac.kr/",
+  "고려대학교(서울)": "https://oku.korea.ac.kr/oku/index.do",
   "광운대학교": "https://iphak.kw.ac.kr/",
   "국제예술대학교": "https://www.haksa.kica.ac.kr/ask_entrance.asp",
   "남서울대학교": "https://www.namseoul.net/",
@@ -32,7 +32,7 @@
   "서울신학대학교": "https://ipsi.stu.ac.kr/",
   "서원대학교": "https://www.seowon.ac.kr/",
   "서일대학교": "https://www.seoil.ac.kr/ipsi/index.do",
-  "성신여자대학교": "https://ipsi.sungshin.ac.kr/",
+  "성신여자대학교": "https://ipsi.sungshin.ac.kr/main/",
   "세명대학교": "https://ipsi.semyung.ac.kr/",
   "세종대학교": "https://ipsi.sejong.ac.kr/",
   "숙명여자대학교": "https://admission.sookmyung.ac.kr/",
@@ -45,7 +45,7 @@
   "용인대학교": "https://ipsi.yongin.ac.kr/",
   "우송대학교": "https://ent.wsu.ac.kr/",
   "인덕대학교": "https://ipsi.induk.ac.kr/",
-  "인제대학교": "https://www.inje.ac.kr/",
+  "인제대학교": "https://iphak.inje.ac.kr/",
   "인천대학교": "https://admission.inu.ac.kr/",
   "인하대학교": "https://admission.inha.ac.kr/",
   "장로회신학대학교": "https://www.puts.ac.kr/ipsi/db/db_admission_v1/",
@@ -65,7 +65,212 @@
   "계명대학교": "https://www.gokmu.ac.kr/",
   "KAIST": "https://admission.kaist.ac.kr/undergraduate/",
   "서울교육대학교": "https://enter.snue.ac.kr/",
-  "수원여자대학교": "https://entr.swwu.ac.kr/"
+  "수원여자대학교": "https://entr.swwu.ac.kr/",
+  "고려대학교(세종)": "https://oku.korea.ac.kr/sejong/index.do",
+  "한림대학교": "https://admission.hallym.ac.kr/",
+  "전북대학교": "https://enter.jbnu.ac.kr/",
+  "전주대학교": "https://www.jj.ac.kr/iphak/index.do",
+  "순천향대학교": "https://ipsi.sch.ac.kr/main.do",
+  "성결대학교": "https://ipsi.sungkyul.ac.kr/",
+  "대전대학교": "https://ipsi.dju.ac.kr/",
+  "수원대학교": "https://ipsi.suwon.ac.kr/",
+  "부산가톨릭대학교": "https://ipsi.cup.ac.kr/ipsi/main.do",
+  "건국대학교(글로컬)": "https://enter.kku.ac.kr/",
+  "우석대학교": "https://www.woosuk.ac.kr/",
+  "홍익대학교": "https://www.hongik.ac.kr/kr/admission/notice-admission.do",
+  "총신대학교": "https://www.csu.ac.kr/gate",
+  "한국항공대학교": "https://ibhak.kau.ac.kr/",
+  "연세대학교(미래)": "https://admission.yonsei.ac.kr/mirae/admission/html/main/main.asp",
+  "서울과학기술대학교": "https://admission.seoultech.ac.kr/",
+  "한성대학교": "https://enter.hansung.ac.kr/",
+  "중앙대학교": "https://admission.cau.ac.kr/",
+  "가톨릭관동대학교": "https://ipsi.cku.ac.kr/",
+  "국립한국해양대학교": "https://www.kmou.ac.kr/ipsi/"
  },
- "seen": {}
+ "seen": {
+  "건국대학교": {
+   "실기/실적(체육특기자) 최초합격자 발표": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=9C7AF65406CE4AC4BF8AF79CB367FFDC",
+   "학생부종합(KU자기추천, 특수교육대상자) 1단계": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=96A48660965545BCBBE896AFE6EAA718"
+  },
+  "가천대학교": {
+   "수시 합격자발표(수능일 이전)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=7417CB291FBF4475ADF09F41CF06C700",
+   "지역균형 면접 대상자": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=997C4B8DDEC34A51AED1F96CA7EB56D0"
+  },
+  "건양대학교": {
+   "수시전형 합격자 조회": "https://entrance.kyu.ac.kr/login"
+  },
+  "경기대학교": {
+   "최초합격자 발표": "https://trs01.uwayapply.com/052ZJOBV257A390000KARF/login",
+   "학생부종합 1단계 합격자발표": "https://trs01.uwayapply.com/048YNV1M0U11KJVVVUKC54/login"
+  },
+  "경남대학교": {
+   "수시 합격자 조회": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=C6DA0C03BF"
+  },
+  "경북대학교": {
+   "실기전형(일부)·특기자(체육) 최종 합격자": "https://trs01.uwayapply.com/052PJOBV25744K8000RL5O/login",
+   "1단계 합격자": "https://trs01.uwayapply.com/052LJOBV25744KO000UIT2/login"
+  },
+  "경상국립대학교": {
+   "학생부종합 1단계 합격자": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=3E3258007DA54FCB95426442C90D25B8"
+  },
+  "고려대학교(서울)": {
+   "특기자전형(체육교육과) 최초합격자 발표 (11.21)": "https://inquiry.korea.ac.kr/?params=eyJtZW51SWQiOiJNMTEyODcwIiwibG9jYWxlIjoia28ifQ=="
+  },
+  "광운대학교": {
+   "수시 최초합격자 발표": "https://trs01.uwayapply.com/052NJOBV257CE90000T41D"
+  },
+  "남서울대학교": {
+   "수시 합격자 발표": "https://r4-pass04.mncapro.com/nsu_v8/pass/pass.php?CODE=QmN6YWtqU0YvdTBobGhMamE3c21xTVZyeml5RitRV1BESmVyR1JLa0dOQT0="
+  },
+  "단국대학교": {
+   "[죽전] 학생부종합 1단계": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=B687ECFBB4734AD984C9EAB364D3453B"
+  },
+  "단국대학교(천안)": {
+   "[천안] 학생부종합 1단계": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=0D2F98D1FBE44CA3A7656813C88B6438"
+  },
+  "대구교육대학교": {
+   "합격자 조회": "https://trs03.uwayapply.com/052LJOBV2571LO8000UIT2/login"
+  },
+  "대구대학교": {
+   "수시모집 최초합격자 발표": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=E45FACF17F"
+  },
+  "덕성여자대학교": {
+   "학생부종합(덕성인재Ⅱ, 장애인 등) 1단계": "https://enter.duksung.ac.kr/notice/view.php?bn=7786"
+  },
+  "동덕여자대학교": {
+   "수시 합격자 조회(수능최저 미반영)": "https://ipsi.dongduk.ac.kr/ipsi/contents/admhelper-notice.do?schM=view&id=92411"
+  },
+  "동양대학교": {
+   "수시모집 합격자 발표 안내": "https://ipsi.dyu.ac.kr/information/information_01/?mod=document&uid=4146"
+  },
+  "명지대학교": {
+   "학생부종합 1단계 합격자": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=C1587343BDC14159917AAC50BA2EEEB9"
+  },
+  "백석대학교": {
+   "수시모집 합격자 조회(휴대폰 번호 필요)": "https://trs02.uwayapply.com/052JJOBV2577L5000001ON/login"
+  },
+  "삼육대학교": {
+   "수시 합격현황 조회(수능최저 미적용)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=CEEA861DCB6D4A7B89FCE59BE2AA1EA2"
+  },
+  "상명대학교": {
+   "상명인재 1단계": "https://trs02.uwayapply.com/0523JOBV257C810000OOO3"
+  },
+  "서울대학교": {
+   "일반전형·기회균형 1단계 (11.20)": "https://admission.snu.ac.kr/undergraduate/notice?md=v&bbsidx=179642"
+  },
+  "서울시립대학교": {
+   "학생부종합 1단계": "https://trs01.uwayapply.com/038NK6BKAAL0000000T41D"
+  },
+  "서원대학교": {
+   "합격자 조회": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=B8DA502D5A"
+  },
+  "서일대학교": {
+   "합격자조회": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=46432F0BE77043B0882775254F872D7E"
+  },
+  "성신여자대학교": {
+   "실기/실적 일반학생 합격자": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=D72EA700DEA541169FBE14FD7186D8B4",
+   "자기주도인재/특수교육 1단계": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=DD833ADD6C7E47DFA091E8E07EDE6328"
+  },
+  "세명대학교": {
+   "합격자조회": "https://ipsi2.semyung.ac.kr/smuipsi/index/index.smu"
+  },
+  "세종대학교": {
+   "실기/실적 최초합격자": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=94A466D410",
+   "세종인재(면접형) 1단계": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=95C1436624"
+  },
+  "숙명여자대학교": {
+   "예능창의인재 최종합격자": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54672"
+  },
+  "숭실대학교": {
+   "학생부종합·정보보호특기자 1단계": "https://iphak.ssu.ac.kr/board/notice_view.asp?flag=1&number=2346",
+   "예체능우수인재 최초합격자": "https://iphak.ssu.ac.kr/board/notice_view.asp?flag=1&number=2335"
+  },
+  "안양대학교": {
+   "수시 최종 합격자 발표": "https://trs03.uwayapply.com/0384K6BK8TAVVVVVVUONEE/login"
+  },
+  "연세대학교(서울)": {
+   "최종합격자 [논술,국제인재,기회균형,체육인재,특수교육]": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_susi_fin_AACCBDBHCJ_J/pass.asp",
+   "학생부종합[활동우수형] 2단계 면접대상자": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_1st_CB_K/pass.asp",
+   "학생부종합[국제형] 2단계 면접대상자 (11.23)": "https://www2.yonsei.ac.kr/entrance/2027/susi/pass_1st_CP_Y/pass.asp"
+  },
+  "용인대학교": {
+   "수시 최초합격자": "https://trs01.uwayapply.com/052PJOBV2579PSO000RL5O/login",
+   "체육우수자 최초합격자": "https://trs01.uwayapply.com/052QJOBV2579PSNVVUQ7JO/login"
+  },
+  "인천대학교": {
+   "특기자 최초합격자": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=2837D09E5EA94D178D5E69CCBB192329"
+  },
+  "인하대학교": {
+   "학생부종합 1단계": "https://trs01.uwayapply.com/038TK6BK8S5C000000ONEE",
+   "실기우수자·체육특기자 최초합격자": "https://trs01.uwayapply.com/038RK6BK8S5G000000Q6A3"
+  },
+  "조선대학교": {
+   "교과·실기 최초합격": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=5B1D7D23BD",
+   "평생학습·재직자 최초합격": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=3CBB1C1FB6",
+   "학생부종합(면접) 1단계": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=0922EF168C"
+  },
+  "청주대학교": {
+   "수시모집 합격자 발표": "https://trs02.uwayapply.com/0388K6BK7LSFVVVVVULPN4/login"
+  },
+  "충남대학교": {
+   "학생부종합·교과(면접) 1단계": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=C76413DD9D"
+  },
+  "한국교통대학교": {
+   "학생부종합Ⅰ(항공서비스) 1단계": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=7BD1C427F9"
+  },
+  "한국기술교육대학교": {
+   "학생부종합·충남형계약학과 최종합격자": "https://www.koreatech.ac.kr/board.es?mid=a40601000000&bid=0036&list_no=56887&act=view"
+  },
+  "한양대학교": {
+   "특기자전형[최종] / 학생부종합(면접형)[1단계]": "https://portal.hanyang.ac.kr/ipsi/findLoginPage.do"
+  },
+  "전북대학교": {
+   "학생부종합 1단계 (11.20)": "https://trs03.uwayapply.com/0529JOBV2575AU8000KC54/login"
+  },
+  "전주대학교": {
+   "수시모집 합격자발표 (11.20)": "https://trs03.uwayapply.com/0386K6BK6INJVVVVVUN8IP/login"
+  },
+  "성결대학교": {
+   "수시 최초 합격자발표": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=B5125EF9F3"
+  },
+  "대전대학교": {
+   "수시모집 합격자발표(수능최저 미적용)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=71322E12C99A478588103F855FC061DC"
+  },
+  "수원대학교": {
+   "합격자 발표(면접/기회/고운/실기/농어촌/특성화고/재직자)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=A31D2EEC5DB648079EFF87CF36F94959"
+  },
+  "부산가톨릭대학교": {
+   "수시모집 합격자 발표(전체 전형, 11.25 14시)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=4337B52B153C4D09B751518BF983217E"
+  },
+  "건국대학교(글로컬)": {
+   "교과 등 최초합격자 발표": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass_su2_fnl_2027/index_login.jsp",
+   "의예과 1단계": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass1st_2027_medi/index_login.jsp",
+   "학생부종합 1단계": "https://enter.kku.ac.kr/notice/view.php?bn=7394&m_type=SUSI"
+  },
+  "우석대학교": {
+   "수시 최초합격자 발표": "https://nwas.woosuk.ac.kr/module/index.do?menuSeq=6343"
+  },
+  "홍익대학교": {
+   "미술계열 면접고사 대상자": "https://www.hongik.ac.kr/kr/admission/notice-admission.do",
+   "체육우수자 합격자": "https://www.hongik.ac.kr/kr/admission/notice-admission.do",
+   "공연예술우수자 합격자": "https://www.hongik.ac.kr/kr/admission/notice-admission.do"
+  },
+  "연세대학교(미래)": {
+   "면접대상자 발표": "https://yswa.yonsei.ac.kr/EXP/2027/SS/SI/27ss_interV_check.asp"
+  },
+  "서울과학기술대학교": {
+   "학생부종합 1단계": "https://trs02.uwayapply.com/052XJOBV25714HO000LPN4/login",
+   "실기 최종": "https://trs02.uwayapply.com/052UJOBV25714I7VVUN9SE"
+  },
+  "중앙대학교": {
+   "실기/실적(특기형) 최초합격": "https://campus.cau.ac.kr/uih/UihCon40_New.jsp?e_gubun=81DAB3BF3149074EAFCAA4A925B5386E",
+   "실기/실적(실기형) 최초합격": "https://campus.cau.ac.kr/uih/UihCon40_New.jsp?e_gubun=33FF4BE89E836B38DD10B96AD3304B58"
+  },
+  "국립한국해양대학교": {
+   "지역인재 1단계": "https://trs03.uwayapply.com/052HJOBV2572QF80001GKC/login"
+  },
+  "인제대학교": {
+   "합격자 조회": "https://trs03.uwayapply.com/038NK6BK58U0000000T41D/login"
+  }
+ }
 }
