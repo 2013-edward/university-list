@@ -3427,7 +3427,8 @@
     "const_params": {
      "_only": "논술,국제인재,기회균형,체육인재,특기자,특수교육",
      "_stage": "final",
-     "_alt": "yonsei3"
+     "_alt": "yonsei3",
+     "_recheck_before": "2026-11-23 13:35"
     }
    },
    "verdict_rules": [
@@ -3437,6 +3438,13 @@
      "pattern": null,
      "result": "no_match",
      "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?:충원\\s*합격\\s*)?대기\\s*순번은?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
     },
     {
      "match": "regex",
@@ -11940,6 +11948,13 @@
      "pattern": null,
      "result": "no_match",
      "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(?:충원\\s*합격\\s*)?대기\\s*순번은?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
     },
     {
      "match": "regex",
