@@ -3141,8 +3141,6 @@
      "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "_only": "면접",
-     "_except": "서류",
      "_stage": "1"
     }
    },
@@ -3172,7 +3170,7 @@
      "match": "contains",
      "text": "조회된 데이터가 없습니다",
      "pattern": null,
-     "result": "fail",
+     "result": "no_match",
      "capture": false
     },
     {
