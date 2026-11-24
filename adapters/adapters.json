@@ -4823,9 +4823,9 @@
     "건국대학교(글로컬캠퍼스)"
    ],
    "engine": "http",
-   "encoding": "cp949",
+   "encoding": "utf-8",
    "request": {
-    "url": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass1st_2027_prac/index_login.jsp",
+    "url": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass_su2_fnl_2027/index_login.jsp",
     "method": "GET",
     "action_url": null,
     "fields": {
@@ -4834,16 +4834,18 @@
      "birth6": "birth"
     },
     "const_params": {
-     "task": "f_EntrUserLogin",
+     "task": "f_EntrUserLoginList",
      "campFg": "",
      "entrYy": "",
      "collDiv": "",
      "loginType": "2",
      "encFg": "Y",
      "_sha256": "birth",
-     "_stage": "1",
-     "_only": "체육특기자,스포츠건강,골프산업",
-     "_next_url": "passAnun.jsp?seltType={}"
+     "_stage": "final",
+     "_next_url": "passAnun.jsp?seltType={}",
+     "_except": "의예,Cogito,자기추천,종합,학종",
+     "_alt": "kku2,kku3",
+     "_recheck_before": "2026-11-24 15:30"
     }
    },
    "verdict_rules": [
@@ -15043,6 +15045,269 @@
     {
      "match": "contains",
      "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "kku2": {
+   "univ_id": "kku2",
+   "name": "건국대학교(글로컬)",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass1st_2027_cgt/index_login.jsp",
+    "method": "GET",
+    "action_url": null,
+    "fields": {
+     "exam_no": "examNo",
+     "name": "korNm",
+     "birth6": "birth"
+    },
+    "const_params": {
+     "task": "f_EntrUserLogin",
+     "campFg": "",
+     "entrYy": "",
+     "collDiv": "",
+     "loginType": "2",
+     "encFg": "Y",
+     "_sha256": "birth",
+     "_stage": "1",
+     "_next_url": "passAnun.jsp?seltType={}",
+     "_recheck_before": "2026-11-24 15:30",
+     "_only": "Cogito,자기추천,종합,학종",
+     "_alt_of": "kku"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격 입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하합니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "kku3": {
+   "univ_id": "kku3",
+   "name": "건국대학교(글로컬)",
+   "aliases": [],
+   "engine": "http",
+   "encoding": "cp949",
+   "request": {
+    "url": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass1st_2027_medi/index_login.jsp",
+    "method": "GET",
+    "action_url": null,
+    "fields": {
+     "exam_no": "examNo",
+     "name": "korNm",
+     "birth6": "birth"
+    },
+    "const_params": {
+     "task": "f_EntrUserLogin",
+     "campFg": "",
+     "entrYy": "",
+     "collDiv": "",
+     "loginType": "2",
+     "encFg": "Y",
+     "_sha256": "birth",
+     "_stage": "1",
+     "_next_url": "passAnun.jsp?seltType={}",
+     "_recheck_before": "2026-11-24 15:30",
+     "_only": "의예",
+     "_alt_of": "kku",
+     "_except": "Cogito,자기추천,종합,학종"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "아쉽게도",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격자 명단에 없",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격 입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하합니다",
      "pattern": null,
      "result": "pass",
      "capture": false
