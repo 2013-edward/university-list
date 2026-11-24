@@ -3989,7 +3989,8 @@
      "_b_wait_ms": "15000",
      "_only": "학교생활우수자,글로벌인재",
      "_except": "의예",
-     "_stage": "1"
+     "_stage": "1",
+     "_alt": "yonsei2b"
     }
    },
    "verdict_rules": [
@@ -12541,7 +12542,8 @@
     },
     "const_params": {
      "_only": "종합,지역의사",
-     "_stage": "1"
+     "_stage": "1",
+     "_alt": "gnu2"
     }
    },
    "verdict_rules": [
@@ -14239,7 +14241,8 @@
     "const_params": {
      "_except": "의예,약학,간호,글로컬,지역의사",
      "_stage": "final",
-     "_recheck_before": "2026-11-23 10:40"
+     "_recheck_before": "2026-11-23 10:40",
+     "_alt": "inje2"
     }
    },
    "verdict_rules": [
@@ -15308,6 +15311,407 @@
     {
      "match": "contains",
      "text": "축하합니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "gnu2": {
+   "univ_id": "gnu2",
+   "name": "경상국립대학교",
+   "aliases": [
+    "경상국립대",
+    "경상대학교",
+    "경상대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=EEC40AEB2A224CA3B86DB31DAA3B5354",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "StuName",
+     "exam_no": "ExamNo",
+     "birth6": "SSN1"
+    },
+    "const_params": {
+     "_only": "체육교육,스포츠헬스케어",
+     "_stage": "1",
+     "_alt_of": "gnu",
+     "_recheck_before": "2026-11-25 07:55"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "발표 대상자가 아닙니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "inje2": {
+   "univ_id": "inje2",
+   "name": "인제대학교",
+   "aliases": [
+    "인제대"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://trs03.uwayapply.com/038MK6BK58U3VVVVVUT5B2/login",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
+    },
+    "const_params": {
+     "_only": "의예,약학,간호,지역의사",
+     "_except": "교과,지역인재Ⅱ,지역인재II,지역인재2",
+     "_stage": "1",
+     "_alt_of": "inje",
+     "_recheck_before": "2026-11-25 07:55"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격상태\\s*구분\\s*[:：]?\\s*불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격상태\\s*구분\\s*[:：]?\\s*(?:예비|후보)\\s*(?:순위|번호)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격상태\\s*구분\\s*[:：]?\\s*합격|합격을\\s*진심으로\\s*축하",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    }
+   ]
+  },
+  "yonsei2b": {
+   "univ_id": "yonsei2b",
+   "name": "연세대학교(미래)",
+   "aliases": [
+    "연세대학교 미래캠퍼스",
+    "연세대 미래캠퍼스",
+    "연세대학교(미래)"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://yswa.yonsei.ac.kr/EXP/2027/SS/SI_Med/27ss_interV_check.asp",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "exam_no": "p_ExNo",
+     "birth6": "p_birth"
+    },
+    "const_params": {
+     "_browser": "1",
+     "_b_fill": "[name=\"p_ExNo\"]=exam_no,[name=\"p_birth\"]=birth6",
+     "_b_click": "a:has-text('조회')",
+     "_b_done": "면접|대상|없습니다|아닙니다|합격|확인",
+     "_b_wait_ms": "15000",
+     "_only": "의예",
+     "_stage": "1",
+     "_except": "논술,지역,강원,기회,농어촌,특기",
+     "_alt_of": "yonsei2",
+     "_recheck_before": "2026-11-25 07:55"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "(조회된|검색된)\\s*(자료|내용|정보)가?\\s*없|정확(히|하게)\\s*입력",
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표 기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "발표기간이 아닙니다",
+     "pattern": null,
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "대상자?가\\s*아닙|선발되지|아쉽게도",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "면접\\s*대상(?:자)?\\s*(?:입니다|이십니다|로\\s*선정|으로\\s*선정|에\\s*해당)",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    }
+   ]
+  },
+  "smu_cheonan": {
+   "univ_id": "smu_cheonan",
+   "name": "상명대학교(천안)",
+   "aliases": [
+    "상명대학교 천안캠퍼스",
+    "상명대학교천안캠퍼스",
+    "상명대(천안)",
+    "상명대 천안캠퍼스",
+    "상명대천안"
+   ],
+   "engine": "http",
+   "encoding": "utf-8",
+   "request": {
+    "url": "https://trs02.uwayapply.com/052SJOBV257BGIVVVUOOO3/login",
+    "method": "POST",
+    "action_url": null,
+    "fields": {
+     "name": "NAMEKOR",
+     "exam_no": "APPLYNO",
+     "birth6": "BIRTHDATE6"
+    },
+    "const_params": {
+     "_except": "교과",
+     "_stage": "final",
+     "_recheck_before": "2026-11-25 07:55"
+    }
+   },
+   "verdict_rules": [
+    {
+     "match": "contains",
+     "text": "조회된 데이터가 없습니다",
+     "pattern": null,
+     "result": "no_match",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격상태\\s*구분\\s*[:：]?\\s*불합격",
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격상태\\s*구분\\s*[:：]?\\s*(?:예비|후보)\\s*(?:순위|번호)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격상태\\s*구분\\s*[:：]?\\s*합격|합격을\\s*진심으로\\s*축하",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "예비\\s*(?:번호|순위)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "contains",
+     "text": "불합격",
+     "pattern": null,
+     "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격을 축하",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하셨습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격하였습니다",
+     "pattern": null,
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "contains",
+     "text": "합격입니다",
      "pattern": null,
      "result": "pass",
      "capture": false
