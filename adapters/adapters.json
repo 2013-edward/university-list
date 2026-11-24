@@ -5268,7 +5268,7 @@
      "_b_cols": "seltTypeNm=전형명,invitUnitNm=모집단위,passNm=합격여부,seq1PassYn=1단계합격",
      "_b_wait_ms": "25000",
      "_stage": "final",
-     "_recheck_before": "2026-11-24 08:36"
+     "_recheck_before": "2026-11-24 14:10"
     }
    },
    "verdict_rules": [
@@ -5277,6 +5277,27 @@
      "text": "조회 결과 없음",
      "pattern": null,
      "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부\\s*[^<]{0,20}예정입니다",
+     "result": "not_open",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부\\s*(?:후보|예비|충원)\\s*(?:순위|번호)?\\s*[:：]?\\s*(\\d+)",
+     "result": "waitlist",
+     "capture": true
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격여부\\s*(?:후보|예비)",
+     "result": "waitlist",
      "capture": false
     },
     {
