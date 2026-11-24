@@ -3419,7 +3419,8 @@
     },
     "const_params": {
      "_only": "실기",
-     "_alt": "snut2"
+     "_alt": "snut2",
+     "_recheck_before": "2026-11-24 15:20"
     }
    },
    "verdict_rules": [
@@ -3527,10 +3528,10 @@
      "birth6": "BIRTHDATE6"
     },
     "const_params": {
-     "_except": "실기,교과,논술",
+     "_except": "실기,교과,논술,고교추천",
      "_stage": "1",
      "_alt_of": "snut",
-     "_recheck_before": "2026-11-24 08:36"
+     "_recheck_before": "2026-11-24 15:20"
     }
    },
    "verdict_rules": [
