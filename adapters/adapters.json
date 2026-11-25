@@ -15965,7 +15965,7 @@
    "request": {
     "url": "https://r4-pass03.mncapro.com/sunmoon_v8/pass/pass.php?CODE=c3l3aGFTblQxalRRVi9IZ2p4S25zd3FTbmlkc0k4Wnp6MVFCQVVzZ1VQbz0=",
     "method": "POST",
-    "action_url": "https://r4-pass03.mncapro.com/sunmoon_v8/pass/result.php",
+    "action_url": "https://r4-pass03.mncapro.com/sunmoon_v8/pass/student_list.php",
     "fields": {
      "name": "USER_NM1",
      "exam_no": "EXAM_NO_T",
@@ -15979,8 +15979,10 @@
      "chasu": "0",
      "service_gb": "B",
      "pagenumber": "2",
-     "_pre_posts": "student_list.php,resultConfig.php",
-     "_stage": "final"
+     "_stage": "final",
+     "_next_url": "result.php?n={}",
+     "_next_pick": "search2\\(\\s*'?(\\d+)'?\\s*\\)",
+     "_recheck_before": "2026-11-25 13:30"
     }
    },
    "verdict_rules": [
