@@ -85,7 +85,8 @@
   "한성대학교": "https://enter.hansung.ac.kr/",
   "중앙대학교": "https://admission.cau.ac.kr/",
   "가톨릭관동대학교": "https://ipsi.cku.ac.kr/",
-  "국립한국해양대학교": "https://www.kmou.ac.kr/ipsi/"
+  "국립한국해양대학교": "https://www.kmou.ac.kr/ipsi/",
+  "호서대학교": "https://intro2.uway.com/hoseo/"
  },
  "seen": {
   "건국대학교": {
@@ -301,6 +302,9 @@
   },
   "계명대학교": {
    "통합지원서비스(합격자 확인)": "https://ibsi.kmu.ac.kr/nx/"
+  },
+  "호서대학교": {
+   "수시모집 최초합격자 발표": "https://trs03.uwayapply.com/0521JOBV25777RO000Q7JO"
   }
  }
 }
