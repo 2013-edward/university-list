@@ -312,7 +312,12 @@
    "수시모집 합격자 조회": "https://r4-pass03.mncapro.com/sunmoon_v8/pass/pass.php?CODE=c3l3aGFTblQxalRRVi9IZ2p4S25zd3FTbmlkc0k4Wnp6MVFCQVVzZ1VQbz0="
   },
   "서울여자대학교": {
-   "수시 합격자 발표(미술, 체육)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=ED7373DE21974021978FBB49ED1BDAE3"
+   "수시 합격자 발표(미술, 체육)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=ED7373DE21974021978FBB49ED1BDAE3",
+   "면접고사 1단계 통과여부(바롬인재면접, SW융합인재, 기독교지도자)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=DA5C9E387D3F4EDDA98E8BCB70C98FB3"
+  },
+  "경희대학교": {
+   "최초합격(기회균형Ⅰ·Ⅱ, 실기우수자)": "https://trs03.uwayapply.com/052QJOBV257CFQ7VVUQ7JO",
+   "네오르네상스 1단계": "https://trs03.uwayapply.com/052OJOBV257CFQFVVURMFD"
   }
  }
 }
