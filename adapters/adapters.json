@@ -1702,7 +1702,7 @@
      "_only": "기회균형,실기",
      "_stage": "final",
      "_alt": "khu2",
-     "_recheck_before": "2026-11-25 16:00"
+     "_recheck_before": "2026-11-25 16:05"
     }
    },
    "verdict_rules": [
@@ -1746,6 +1746,20 @@
      "text": "불합격",
      "pattern": null,
      "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*(?:1단계\\s*|최초\\s*)?합격(?!자)",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*하였습니다",
+     "result": "pass",
      "capture": false
     },
     {
@@ -16282,7 +16296,8 @@
     "const_params": {
      "_only": "네오르네상스",
      "_stage": "1",
-     "_alt_of": "khu"
+     "_alt_of": "khu",
+     "_recheck_before": "2026-11-25 16:05"
     }
    },
    "verdict_rules": [
@@ -16326,6 +16341,20 @@
      "text": "불합격",
      "pattern": null,
      "result": "fail",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*여부\\s*(?:1단계\\s*|최초\\s*)?합격(?!자)",
+     "result": "pass",
+     "capture": false
+    },
+    {
+     "match": "regex",
+     "text": null,
+     "pattern": "합격\\s*하였습니다",
+     "result": "pass",
      "capture": false
     },
     {
