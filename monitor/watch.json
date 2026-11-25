@@ -88,7 +88,8 @@
   "국립한국해양대학교": "https://www.kmou.ac.kr/ipsi/",
   "호서대학교": "https://intro2.uway.com/hoseo/",
   "선문대학교": "https://ilove.sunmoon.ac.kr/",
-  "서울여자대학교": "https://admission.swu.ac.kr/bbs/board.php?bo_table=notice&sca=수시"
+  "서울여자대학교": "https://admission.swu.ac.kr/bbs/board.php?bo_table=notice&sca=수시",
+  "가톨릭대학교": "https://ipsi.catholic.ac.kr/"
  },
  "seen": {
   "건국대학교": {
@@ -253,7 +254,8 @@
    "합격자 발표 안내(공지)": "https://ipsi.suwon.ac.kr/board/notice/read/6261"
   },
   "부산가톨릭대학교": {
-   "수시모집 합격자 발표(전체 전형, 11.25 14시)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=4337B52B153C4D09B751518BF983217E"
+   "수시모집 합격자 발표(전체 전형, 11.25 14시)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=4337B52B153C4D09B751518BF983217E",
+   "합격자 조회(목록)": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=D8E7990E0B"
   },
   "건국대학교(글로컬)": {
    "교과 등 최초합격자 발표": "https://was1.kku.ac.kr/ipsi/anun/pass/susi2/pass_su2_fnl_2027/index_login.jsp",
@@ -318,6 +320,18 @@
   "경희대학교": {
    "최초합격(기회균형Ⅰ·Ⅱ, 실기우수자)": "https://trs03.uwayapply.com/052QJOBV257CFQ7VVUQ7JO",
    "네오르네상스 1단계": "https://trs03.uwayapply.com/052OJOBV257CFQFVVURMFD"
+  },
+  "부천대학교": {
+   "수시1차 합격자 발표": "https://m.site.naver.com/1UDLg"
+  },
+  "한서대학교": {
+   "수시모집 합격자 조회 (11.20)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=DE26C2BEE1994890A716B2585114F52C"
+  },
+  "한성대학교": {
+   "수시모집 합격자 발표": "https://trs02.uwayapply.com/052YJOBV257BRH7VVUKC54/login"
+  },
+  "한림성심대학교": {
+   "수시1차 합격자 조회": "https://pims.jinhakapply.com/Pass/PassList.aspx?Code=7318B2B3D0"
   }
  }
 }
