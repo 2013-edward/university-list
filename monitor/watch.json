@@ -86,7 +86,9 @@
   "중앙대학교": "https://admission.cau.ac.kr/",
   "가톨릭관동대학교": "https://ipsi.cku.ac.kr/",
   "국립한국해양대학교": "https://www.kmou.ac.kr/ipsi/",
-  "호서대학교": "https://intro2.uway.com/hoseo/"
+  "호서대학교": "https://intro2.uway.com/hoseo/",
+  "선문대학교": "https://ilove.sunmoon.ac.kr/",
+  "서울여자대학교": "https://admission.swu.ac.kr/bbs/board.php?bo_table=notice&sca=수시"
  },
  "seen": {
   "건국대학교": {
@@ -305,6 +307,12 @@
   },
   "호서대학교": {
    "수시모집 최초합격자 발표": "https://trs03.uwayapply.com/0521JOBV25777RO000Q7JO"
+  },
+  "선문대학교": {
+   "수시모집 합격자 조회": "https://r4-pass03.mncapro.com/sunmoon_v8/pass/pass.php?CODE=c3l3aGFTblQxalRRVi9IZ2p4S25zd3FTbmlkc0k4Wnp6MVFCQVVzZ1VQbz0="
+  },
+  "서울여자대학교": {
+   "수시 합격자 발표(미술, 체육)": "https://pims.jinhakapply.com/Pass/PassLogin.aspx?Code=ED7373DE21974021978FBB49ED1BDAE3"
   }
  }
 }
